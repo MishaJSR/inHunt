@@ -1,11 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-function MyTeams () {
+function NoFond () {
   return <div>
-	  	Teams
+	  	NotFound
   </div>
 }
 
 
-export default MyTeams;
+export default NoFond;

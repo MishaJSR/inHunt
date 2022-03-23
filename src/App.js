@@ -1,37 +1,86 @@
-import React from 'react';
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Button,
+  makeStyles,
+} from "@material-ui/core";
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
+import { useNavigate } from 'react-router';
+import { Link } from 'react-router-dom';
 import './App.css';
-import { BrowserRouter, Route, Routes } from "react-router-dom"
-import AuthComponent from './hauntcomponents/Auth/AuthComponent';
-import StartPage from './hauntcomponents/StartPage/StartPage';
-import MyTeams from './hauntcomponents/MyTeams/MyTeams';
-import MyProfile from './hauntcomponents/MyProfile/MyProfile';
-import FindPlayers from './hauntcomponents/FindPlayers/FindPlayers';
-import TopTeams from './hauntcomponents/TopTeams/TopTeams';
-import Options from './hauntcomponents/Options/Options';
+import AppRoutes from './Routes/routes';
 
-class App extends React.Component {
-  render() {
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  rightToolbar: {
+    flexGrow: 1,
+  },
+  title: {
+    marginRight: theme.spacing(2),
+  },
+}));
+
+function App () {
+  const classes = useStyles();
+
+
     return (
-      <BrowserRouter>
-        <div className='app-wrapper'>
-        <StartPage />
-          <div className='app-wrapper-content'>
-            <Routes>
-              <Route path="login/*" element={<AuthComponent />} />
-              <Route path="me/*" element={<MyProfile />} />
-              <Route path="myTeams/*" element={<MyTeams />} />
-              <Route path="findPlayer/*" element={<FindPlayers />} />
-              <Route path="topTeams/*" element={<TopTeams />} />
-              <Route path="options/*" element={<Options />} />
-            </Routes>
+      <div className={classes.root}>
+      <AppBar position="static" color="#00ff00">
+        <Toolbar>
+          <Typography variant="h6" className={classes.title}>
+            InHunt
+          </Typography>
+          <div className={classes.rightToolbar}>
+            <Button color="inherit" component={Link} to="/">
+             Start Page
+            </Button>
           </div>
-  
-        </div>
-      </BrowserRouter>
+          <div className={classes.rightToolbar}>
+            <Button color="inherit" component={Link} to="/myTeams">
+              My teams
+            </Button>
+            <Button color="inherit" component={Link} to="/findPlayer">
+              Find Players
+            </Button>
+            <Button color="inherit" component={Link} to="/topTeams">
+              Top Teams
+            </Button>
+            <Button color="inherit" component={Link} to="/options">
+              Options
+            </Button>
+          </div>
+          {true &&
+            (false ? (
+              <>
+                <Button color="inherit" component={Link} to="/me">
+                  firstName lastName
+                </Button>
+                <Button color="inherit" >
+                  Log out
+                </Button>
+              </>
+            ) : (
+              <>
+                <Button color="inherit" component={Link} to="/login">
+                  Login
+                </Button>
+                <Button color="inherit" component={Link} to="/registration">
+                  Registration
+                </Button>
+              </>
+            ))}
+        </Toolbar>
+      </AppBar>
+
+        <AppRoutes />
+      </div>
     );
-  }
- 
+
 }
 
 export default App;

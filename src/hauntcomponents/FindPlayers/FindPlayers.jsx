@@ -1,12 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-class FindPlayers extends React.Component {
-render() {
+function FindPlayers () {
   return <div>
 	  	FindPlayers
   </div>
-}
 
 }
 

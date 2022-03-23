@@ -1,12 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-class Options extends React.Component {
-render() {
+function Options () {
   return <div>
 	  	Options
   </div>
-}
 
 }
 

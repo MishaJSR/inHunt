@@ -1,12 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-class TopTeams extends React.Component {
-render() {
+function TopTeams () {
   return <div>
 	  	TopTeams
   </div>
-}
 
 }
 

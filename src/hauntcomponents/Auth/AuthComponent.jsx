@@ -1,21 +1,17 @@
+import { Button } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { Link, useNavigate } from "react-router-dom";
 import { getMyUserThunk, identificate } from '../../hauntredux/reduserProfile';
 import classes from './AuthComponent.module.css'
 
+function AuthComponent () {    
+  const navigate = useNavigate();
 
+  const onLogOut = () => {
+    navigate("/registration");
+  };
 
-class AuthComponent extends React.Component {
-
-  componentDidMount() {
-    this.props.getMyUserThunk()
-    this.props.identificate("bogda@list.ru")
-  }
-
-    
-  render() {
-    
     return (
       <div className={classes.login_page}>
   <div class={classes.form}>
@@ -29,21 +25,14 @@ class AuthComponent extends React.Component {
     <form class={classes.login_form}>
       <input type="text" placeholder="username"/>
       <input type="password" placeholder="password"/>
-
-      <NavLink  to={"/me"} className={classes.buttonStart}>Login</NavLink>
-      <p class="message">Not registered? <a href="#">Create an account</a></p>
+      <Button variant="contained">Login</Button>
+      <p class="message">Not registered? <a onClick={onLogOut} href="#">Create an account</a></p>
     </form>
   </div>
 </div>
     )
       
   }
-}
 
-let mapStateToProps = (state) => {
-  return {
-    myUser: state.profilePage.myUser
-  }
-}
 
-export default connect (mapStateToProps, {identificate, getMyUserThunk}) (AuthComponent)
+export default AuthComponent
