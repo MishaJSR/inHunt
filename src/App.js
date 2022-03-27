@@ -5,10 +5,11 @@ import {
   Button,
   makeStyles,
 } from "@material-ui/core";
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import ReactDOM from 'react-dom';
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
+import { Context } from "./index";
 import './App.css';
 import AppRoutes from './Routes/routes';
 
@@ -24,8 +25,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function App () {
+const App = () => {
+
+  const {user} = useContext(Context)
+
   const classes = useStyles();
+
+  debugger;
 
 
     return (
@@ -37,7 +43,7 @@ function App () {
           </Typography>
           <div className={classes.rightToolbar}>
             <Button color="inherit" component={Link} to="/">
-             Start Page
+           StartPage
             </Button>
           </div>
           <div className={classes.rightToolbar}>
@@ -55,7 +61,7 @@ function App () {
             </Button>
           </div>
           {true &&
-            (false ? (
+            (user._isAuth ? (
               <>
                 <Button color="inherit" component={Link} to="/me">
                   firstName lastName

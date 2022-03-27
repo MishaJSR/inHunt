@@ -1,13 +1,13 @@
 import { applyMiddleware, combineReducers, createStore } from "redux";
 import reducerPlayers from "./reduserPlayers";
-import reduserProfile from "./reduserProfile";
 import reducerTeams from "./reduseTeams";
 import thunkMiddleWare from "redux-thunk"
+import reducerAuth from "./reduserAuth";
 
 let reducers = combineReducers({
-    profilePage: reduserProfile,
     playersPage: reducerPlayers,
-    teamsPage: reducerTeams
+    teamsPage: reducerTeams,
+    authPage: reducerAuth
     
 });
 

@@ -8,7 +8,7 @@ import axios from "axios";
 // )
 
 
-export const getMyUser = () => {
+export const getAllUser = () => {
     return axios.get(`http://83.220.174.93:2048/Players`)
     .then(
         response => {
@@ -17,48 +17,3 @@ export const getMyUser = () => {
     )
         
 }
-
-// export const unFollowAxi = (id) => {
-//     return axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${id}`)
-//     .then(
-//         response => {
-//             return response
-//         }
-//     )
-// }
-
-// export const onFollowAxi = (id, flag) => {
-//     if (flag)
-//     return axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${id}`)
-//     .then(
-//         response => {
-//             return response
-//         }
-//     ); 
-//     else return axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${id}`)
-//     .then(
-//         response => {
-//             return response
-//         }
-//     )
-        
-// }
-
-// export const getProfileAxi = (id) => {
-//     return axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${id}`)
-//     .then(
-//         response => {
-//             return response
-//         }
-//     )
-// }
-
-
-// export const getHeaderAxi = () => {
-//     return axios.get(`https://social-network.samuraijs.com/api/1.0/auth/me`)
-//     .then(
-//         response => {
-//             return response
-//         }
-//     )
-// }

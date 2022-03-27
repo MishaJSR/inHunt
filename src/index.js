@@ -1,18 +1,25 @@
-import React from 'react';
+import React, { createContext } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import App from './App';
 import { BrowserRouter as Router } from "react-router-dom";
+import UserStore from './store/UserStore';
+import DeviceStore from './store/DeviceStore';
 
-
+export const Context = createContext(null)
 
 // let renderTree = (state) => {
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-    <App/>
+    <Context.Provider value={{
+      user: new UserStore(),
+      device: new DeviceStore(),
+    }}>
+      <Router>
+      <App />
     </Router>
+    </Context.Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

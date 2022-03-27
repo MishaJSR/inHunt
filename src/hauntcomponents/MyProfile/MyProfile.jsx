@@ -1,12 +1,11 @@
 import axios from 'axios';
 import React from 'react';
 import { connect } from 'react-redux';
-import { getMyUserThunk } from '../../hauntredux/reduserProfile';
 
 class MyProfile extends React.Component {
 
 componentDidMount () {
-  this.props.getMyUserThunk()
+
 }
 
 render() {
@@ -23,11 +22,4 @@ render() {
 
 }
 
-let mapStateToProps = (state) => {
-  return {
-    users: state.profilePage.users,
-    myUser: state.profilePage.myUser
-  }
-}
-
-export default connect (mapStateToProps, {getMyUserThunk}) (MyProfile)
+export default MyProfile
