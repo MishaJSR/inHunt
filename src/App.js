@@ -31,8 +31,6 @@ const App = () => {
 
   const classes = useStyles();
 
-  debugger;
-
 
     return (
       <div className={classes.root}>

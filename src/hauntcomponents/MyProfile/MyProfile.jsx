@@ -1,25 +1,17 @@
 import axios from 'axios';
-import React from 'react';
-import { connect } from 'react-redux';
+import React, { useContext } from 'react';
+import { Context } from '../..';
 
-class MyProfile extends React.Component {
+function MyProfile (props) {
 
-componentDidMount () {
+  const {user} = useContext(Context)
 
-}
-
-render() {
-  let a = this.props;
-
-  // let a = "bogda@list.ru"
   return <div>
 
-    {(this.props.myUser === null)? <span> Null </span>: 
-    this.props.myUser.map(e => <div>{e.email}</div>)}
+    
 	  
   </div>
 }
 
-}
 
 export default MyProfile

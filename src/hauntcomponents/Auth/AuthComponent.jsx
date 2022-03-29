@@ -1,24 +1,25 @@
 import { Button } from '@mui/material';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate } from "react-router-dom";
+import { Context } from '../..';
+import { getAllUser } from '../../inquiry/inquiry';
 import classes from './AuthComponent.module.css'
 
 
 function AuthComponent (props) {    
   const navigate = useNavigate();
+  const {user} = useContext(Context)
 
 
+  const [login, setLogin] = useState('')
 
-  const [login, setLogin] = useState("")
-
-  useEffect(() => {
-    
-  })
+  useEffect(async () => {
+    user.setUser(await getAllUser())
+});
   
-
-
   const sendEmail = () => {
-    console.log(login)//будем кидить запрос на поиск данных и загрузку данных пользователя
+    user.setMyUser(login);
+    (user._isAuth) && navigate("/me");
   };
 
 

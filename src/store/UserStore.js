@@ -4,6 +4,7 @@ export default class UserStore {
     constructor() {
         this._isAuth = false
         this._user = []
+        this.Myuser = null
         this._train = "dsd"
         makeAutoObservable(this)
     }
@@ -12,7 +13,17 @@ export default class UserStore {
         this._isAuth = bool
     }
     setUser(user) {
-        this._user = user
+        this._user = [...user]
+    }
+
+    setMyUser(login) {
+        this._user.map(el => {
+            if (el.email == login) {
+                debugger;
+                this.Myuser = el
+                this._isAuth = true
+            }
+        })
     }
 
     get isAuth() {
