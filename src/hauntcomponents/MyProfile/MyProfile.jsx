@@ -1,17 +1,30 @@
 import axios from 'axios';
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Context } from '../..';
+import { Container } from '@mui/material';
+import { Link, useNavigate } from "react-router-dom";
+import { observer } from 'mobx-react-lite';
 
-function MyProfile (props) {
+const MyProfile = observer( () => {
+
+
+  const navigate = useNavigate();
 
   const {user} = useContext(Context)
 
-  return <div>
+  useEffect( () => {
+    !user._isAuth && navigate("/login")
+});
 
+  return <div>
     
+    <Container fixed>
+    <h1>sd</h1>
+    </Container>
 	  
   </div>
 }
+)
 
 
 export default MyProfile

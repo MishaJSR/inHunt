@@ -5,13 +5,14 @@ import {
   Button,
   makeStyles,
 } from "@material-ui/core";
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
 import { Context } from "./index";
 import './App.css';
 import AppRoutes from './Routes/routes';
+import {observer} from "mobx-react-lite";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,9 +26,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const App = () => {
+const App =  observer (() => {
 
   const {user} = useContext(Context)
+
+//   useEffect( () => {
+//     console.log(user.isAuth)
+// });
+
 
   const classes = useStyles();
 
@@ -35,6 +41,7 @@ const App = () => {
     return (
       <div className={classes.root}>
       <AppBar position="static" color="#00ff00">
+
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
             InHunt
@@ -45,6 +52,9 @@ const App = () => {
             </Button>
           </div>
           <div className={classes.rightToolbar}>
+          <Button color="inherit" component={Link} to="/me">
+              My Profile
+            </Button>
             <Button color="inherit" component={Link} to="/myTeams">
               My teams
             </Button>
@@ -58,8 +68,7 @@ const App = () => {
               Options
             </Button>
           </div>
-          {true &&
-            (user._isAuth ? (
+            {(user.isAuth ? (
               <>
                 <Button color="inherit" component={Link} to="/me">
                   firstName lastName
@@ -85,6 +94,6 @@ const App = () => {
       </div>
     );
 
-}
+})
 
 export default App;

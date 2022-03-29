@@ -1,4 +1,5 @@
 import { Button } from '@mui/material';
+import { observer } from 'mobx-react-lite';
 import React, { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import { Context } from '../..';
@@ -6,7 +7,7 @@ import { getAllUser } from '../../inquiry/inquiry';
 import classes from './AuthComponent.module.css'
 
 
-function AuthComponent (props) {    
+const AuthComponent = observer( () => {    
   const navigate = useNavigate();
   const {user} = useContext(Context)
 
@@ -48,5 +49,6 @@ function AuthComponent (props) {
     )
       
   }
+)
 
 export default AuthComponent
