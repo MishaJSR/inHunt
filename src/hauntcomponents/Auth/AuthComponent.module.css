@@ -89,6 +89,11 @@
 .container .info span .fa {
   color: #EF3B3A;
 }
+
+.errorInfo{
+  margin-top: 1rem;
+  color: red;
+}
 body {
   background: #76b852; /* fallback for old browsers */
   background: rgb(141,194,111);

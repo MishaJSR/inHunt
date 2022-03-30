@@ -12,14 +12,13 @@ const MyProfile = observer( () => {
 
   const {user} = useContext(Context)
 
-  useEffect( () => {
-    !user._isAuth && navigate("/login")
-});
 
   return <div>
     
     <Container fixed>
-    <h1>sd</h1>
+      <div><h1>{user.Myuser.email}</h1></div>
+      <div><h2>{user.Myuser.nick}</h2></div>
+      <div><h3>{user.Myuser.type}</h3></div>
     </Container>
 	  
   </div>
