@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import 'materialize-css'
 
 function StartPage () {
   return <div>

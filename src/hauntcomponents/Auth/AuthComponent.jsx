@@ -1,6 +1,6 @@
 import { Button } from '@mui/material';
 import { observer } from 'mobx-react-lite';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import { Context } from '../..';
 import { getAllUser } from '../../inquiry/inquiry';
@@ -10,6 +10,7 @@ import classes from './AuthComponent.module.css'
 const AuthComponent = observer( () => {    
   const navigate = useNavigate();
   const {user} = useContext(Context)
+  const passRef = useRef(null)
 
 
   const [login, setLogin] = useState('')
@@ -36,7 +37,7 @@ const AuthComponent = observer( () => {
   <div class={classes.form}>
     <form class={classes.login_form}>
       <input onChange={e => setLogin(e.target.value)} type="text" placeholder="username"/>
-      <input type="password" placeholder="password"/>
+      <input ref={passRef} type="password" placeholder="password"/>
       <Button onClick={() => sendEmail()} variant="contained">Login</Button>
       {(!user.isAuth) && (isClick) && 
       <p class="message">Not registered? <a onClick={onLogOut} href="">Create an account</a></p>}

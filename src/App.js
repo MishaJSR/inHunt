@@ -13,6 +13,7 @@ import { Context } from "./index";
 import './App.css';
 import AppRoutes from './Routes/routes';
 import { observer } from "mobx-react-lite";
+import 'materialize-css'
 
 const useStyles = makeStyles((theme) => ({
   root: {
