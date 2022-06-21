@@ -51,7 +51,7 @@ const MyProfile = observer(() => {
       <form class="col s12">
         <div class="row">
           <div class="input-field col s6">
-            <input placeholder="Placeholder" id="first_name" type="text" class="validate" />
+            <input id="first_name" type="text" class="validate" />
             <label for="first_name">First Name</label>
           </div>
           <div class="input-field col s6">
@@ -66,15 +66,19 @@ const MyProfile = observer(() => {
           </div>
         </div>
         <div class="row">
-          <div class="input-field col s12">
+          <div class="input-field col s6">
             <input id="password" type="password" class="validate" />
-            <label for="password">Password</label>
+            <label for="password">Change Password</label>
+          </div>
+          <div class="input-field col s6">
+            <input id="password" type="password" class="validate" />
+            <label for="password">Repeat Password</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
             <input id="email" type="email" class="validate" />
-            <label for="email">Email</label>
+            <label for="email">New Mail</label>
           </div>
         </div>
         <div class="row">
@@ -85,6 +89,11 @@ const MyProfile = observer(() => {
               <label for="email_inline">Email</label>
               <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
             </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12">
+          <a  class="waves-effect waves-light btn mt-1vh fz-70 green" onClick={() => user.setNewAva()}>Save Changes</a>
           </div>
         </div>
       </form>
