@@ -4,6 +4,7 @@ import { Context } from '../..';
 import { Container } from '@mui/material';
 import { Link, useNavigate } from "react-router-dom";
 import { observer } from 'mobx-react-lite';
+import './MyProfile.css';
 
 const MyProfile = observer(() => {
 
@@ -21,26 +22,32 @@ const MyProfile = observer(() => {
       <div><h3>{user.Myuser.type}</h3></div>
     </Container> */}
     <div class="container mt-2r">
-      <div class="row">
+      <div class="row ">
 
-        <div className="col xl4 l3 m2 s2 ">
+        <div className="col xl4 l6 m6 s12 center-align">
           <div>
-          <img src={user.avaImg} class="img-center-circle" alt="" />
+            <img src={user.avaImg} class="img-center-circle" alt="" />
           </div>
-          
+          <div>
+            <a onClick={() => user.setNewAva("https://st.depositphotos.com/1703013/1328/i/450/depositphotos_13286310-stock-photo-bird-hunting-silhouette.jpg")}
+             class="waves-effect waves-light btn mt-1vh fz-60 green">Сменить фото</a>
+          </div>
         </div>
-        <div className="col xl8 l9 m10 s10">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto dolores, veritatis quis ducimus neque blanditiis architecto pariatur obcaecati voluptatum odit laboriosam, quam ab error cum. Illum possimus minus velit ratione.
-          A, libero nihil velit perferendis saepe non earum assumenda harum eveniet iure praesentium nostrum eos laboriosam atque esse sed. Quos nesciunt numquam beatae iste dolorum vitae molestias quisquam ipsam cumque.
-          Voluptatibus, inventore? Quaerat, ullam fuga architecto nulla ratione consequuntur expedita debitis temporibus dolor adipisci voluptatibus quidem ab reprehenderit magnam laudantium atque dolore commodi iusto doloribus sapiente dicta explicabo accusamus laborum?
-          Aperiam impedit sequi quas enim dolorem amet facilis itaque adipisci ipsam architecto? Maxime, dignissimos amet esse voluptatem modi officiis deleniti earum, tempora quasi ullam magni necessitatibus, aliquid consequatur illo! A.
-          Aut nam saepe aspernatur! Nesciunt ullam optio dolor! Maxime corporis porro eum molestiae vero mollitia, reprehenderit nostrum optio, unde recusandae at? Possimus quas quo hic tempore consectetur ea tempora earum!
-          Consequatur molestiae nisi beatae hic quam. Quae placeat cum omnis dignissimos? Modi molestias esse assumenda, accusamus facilis doloremque. Harum corporis adipisci iste dolore praesentium fugit necessitatibus iure nemo rem consectetur?
-          Iusto repellat earum saepe quod fugit, quo dolorem labore expedita, sequi recusandae ducimus at laborum fuga necessitatibus libero qui? Eos nobis ea quibusdam ex fuga! Tenetur illo ipsum iure esse.</div>
-        {/* <img width="40" src={user.avaImg}/> */}
+
+        <div className="col xl8 l6 m6 s12">
+        <div>
+          <h2>{user.name} {user.surname}</h2>
+          </div>
+        <div>
+          <h5>{user.status}</h5>
+          </div>
+          <div>{user.about}</div>
+        </div>
       </div>
     </div>
 
-    <div class="row">
+<div className="container mt-2r">
+<div class="row">
       <form class="col s12">
         <div class="row">
           <div class="input-field col s6">
@@ -82,6 +89,8 @@ const MyProfile = observer(() => {
         </div>
       </form>
     </div>
+</div>
+
   </div>
 }
 )

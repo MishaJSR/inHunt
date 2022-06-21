@@ -1,0 +1,26 @@
+.ml-1r {
+    margin-left: 1rem;
+}
+.mt-2r {
+    margin-top: 2rem;
+}
+.mt-1vh {
+    margin-top: 1vh;
+}
+.mr-1r {
+    margin-right: 1rem;
+}
+.img-center-circle {
+    width: 100%;
+    height: auto;
+    max-height: fit-content;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+}
+
+
+.fz-60{
+    font-size: 60%;
+}
