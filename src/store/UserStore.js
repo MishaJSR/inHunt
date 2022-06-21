@@ -6,6 +6,7 @@ export default class UserStore {
         this._user = []
         this.Myuser = null
         this._train = "dsd"
+        this.avaImg = "https://klike.net/uploads/posts/2020-04/1587543874_1.jpg"
         makeAutoObservable(this)
     }
 

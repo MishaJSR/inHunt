@@ -35,7 +35,6 @@ const App = observer(() => {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="#00ff00">
 
           {/* <Typography variant="h6" className={classes.title}>
             InHunt
@@ -48,13 +47,13 @@ const App = observer(() => {
           {(user.isAuth ?
             <nav>
             <div class="nav-wrapper green darken-4">
-              <a href="/" class="brand-logo logo left">Logo</a>
-              <ul id="nav-mobile" class="ml-6r hide-on-med-and-down">
+              <a href="/" class="brand-logo pd-3r left">InHunt</a>
+              <ul id="nav-mobile" class="ml-12r hide-on-med-and-down">
                 <li><a href="me">My Profile</a></li>
                 <li><a href="myTeams">MyTeams</a></li>
                 <li><a href="options">Options</a></li>
               </ul>
-              <a class="right mr-1r" href="login">Unlogin</a>
+              <a class="right pd-2r" href="/login" onClick={() => user.setIsAuth(false)}>Unlogin</a>
             </div>
           </nav>
             // <div className={classes.rightToolbar}>
@@ -84,15 +83,18 @@ const App = observer(() => {
             // </div> 
             :
             <>
-              <Button color="inherit" component={Link} to="/login">
-                Login
-              </Button>
-              <Button color="inherit" component={Link} to="/registration">
-                Registration
-              </Button>
+            <nav>
+            <div class="nav-wrapper green darken-4">
+              <a href="/" class="brand-logo pd-3r left">InHunt</a>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="login">Login</a></li>
+                <li><a href="registration">Registration</a></li>
+              </ul>
+              <a class="right pd-2r" href="/me" onClick={() => user.setIsAuth(true)}>Login</a>
+            </div>
+          </nav>
               </>)
           }
-      </AppBar>
 
       <AppRoutes />
     </div>

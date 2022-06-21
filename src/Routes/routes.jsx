@@ -1,3 +1,4 @@
+import { observer } from "mobx-react-lite";
 import { useContext } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import AuthComponent from "../hauntcomponents/Auth/AuthComponent";
@@ -11,7 +12,8 @@ import StartPage from "../hauntcomponents/StartPage/StartPage";
 import TopTeams from "../hauntcomponents/TopTeams/TopTeams";
 import {Context} from "../index"
 
-function AppRoutes() {
+const AppRoutes = observer(() => 
+{
     const { user } = useContext(Context)
 
     return user.isAuth ? (
@@ -23,15 +25,14 @@ function AppRoutes() {
             <Route path="/findPlayer" element={<FindPlayers />} />
             <Route path="/topTeams" element={<TopTeams />} />
             <Route path="/options" element={<Options />} />
-            <Route path="/not-found-404" element={<NoFond />} />
-            <Route path="*" element={<StartPage/>} />
+            <Route path="*" element={<NoFond />} />
         </Routes>
     ) :         
     <Routes>
     <Route path="/login" element={<AuthComponent />} />
     <Route path="/registration" element={<Registrate />} />
-    <Route path="*" element={<AuthComponent />} />
+    <Route path="*" element={<StartPage/>} />
 </Routes>
-}
+}) 
 
 export default AppRoutes

@@ -1,14 +1,27 @@
 @import "~materialize-css/dist/css/materialize.min.css";
 
-.ml-6r {
-    margin-left: 6.5rem;
+.ml-12r {
+    margin-left: 12rem;
 }
 .ml-1r {
     margin-left: 1rem;
 }
+.mt-2r {
+    margin-top: 2rem;
+}
 .mr-1r {
     margin-right: 1rem;
 }
+.pd-1r {
+    padding: 0 1rem !important;
+}
+.pd-2r {
+    padding: 0 2rem !important;
+}
+.pd-3r {
+    padding: 0 3rem !important;
+}
+
 li {
     list-style-type: none; /* Убираем маркеры */
    }
@@ -21,6 +34,11 @@ a {
     padding: 0 15px !important;
 }
 
-.logo {
-    padding: 0 1rem !important;
+.img-center-circle {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
 }

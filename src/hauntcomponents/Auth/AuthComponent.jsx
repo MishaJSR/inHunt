@@ -33,18 +33,21 @@ const AuthComponent = observer( () => {
   };
 
     return (
-      <div className={classes.login_page}>
-  <div class={classes.form}>
-    <form class={classes.login_form}>
-      <input onChange={e => setLogin(e.target.value)} type="text" placeholder="username"/>
-      <input ref={passRef} type="password" placeholder="password"/>
-      <Button onClick={() => sendEmail()} variant="contained">Login</Button>
-      {(!user.isAuth) && (isClick) && 
-      <p class="message">Not registered? <a onClick={onLogOut} href="">Create an account</a></p>}
+      <div>
+        Авторизация
+      </div>
+//       <div className={classes.login_page}>
+//   <div class={classes.form}>
+//     <form class={classes.login_form}>
+//       <input onChange={e => setLogin(e.target.value)} type="text" placeholder="username"/>
+//       <input ref={passRef} type="password" placeholder="password"/>
+//       <Button onClick={() => sendEmail()} variant="contained">Login</Button>
+//       {(!user.isAuth) && (isClick) && 
+//       <p class="message">Not registered? <a onClick={onLogOut} href="">Create an account</a></p>}
       
-    </form>
-  </div>
-</div>
+//     </form>
+//   </div>
+// </div>
     )
       
   }
