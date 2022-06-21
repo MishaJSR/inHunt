@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import AuthComponent from "../hauntcomponents/Auth/AuthComponent";
 import FindPlayers from "../hauntcomponents/FindPlayers/FindPlayers";
@@ -8,10 +9,12 @@ import Options from "../hauntcomponents/Options/Options";
 import Registrate from "../hauntcomponents/Registrate/Registrate";
 import StartPage from "../hauntcomponents/StartPage/StartPage";
 import TopTeams from "../hauntcomponents/TopTeams/TopTeams";
-
+import {Context} from "../index"
 
 function AppRoutes() {
-    return true ? (
+    const { user } = useContext(Context)
+
+    return user.isAuth ? (
         <Routes>
             <Route path="/login" element={<AuthComponent />} />
             <Route path="/registration" element={<Registrate />} />
@@ -23,7 +26,12 @@ function AppRoutes() {
             <Route path="/not-found-404" element={<NoFond />} />
             <Route path="*" element={<StartPage/>} />
         </Routes>
-    ) : <div>Sorry</div>
+    ) :         
+    <Routes>
+    <Route path="/login" element={<AuthComponent />} />
+    <Route path="/registration" element={<Registrate />} />
+    <Route path="*" element={<AuthComponent />} />
+</Routes>
 }
 
 export default AppRoutes

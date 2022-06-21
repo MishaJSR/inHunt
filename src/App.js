@@ -37,46 +37,52 @@ const App = observer(() => {
     <div className={classes.root}>
       <AppBar position="static" color="#00ff00">
 
-        <Toolbar>
-          <Typography variant="h6" className={classes.title}>
+          {/* <Typography variant="h6" className={classes.title}>
             InHunt
           </Typography>
           <div className={classes.rightToolbar}>
             <Button color="inherit" component={Link} to="/">
               StartPage
             </Button>
-          </div>
+          </div> */}
           {(user.isAuth ?
-            <div className={classes.rightToolbar}>
-              <Button color="inherit" component={Link} to="/me">
-                My Profile
-              </Button>
-              <Button color="inherit" component={Link} to="/myTeams">
-                My teams
-              </Button>
-              <Button color="inherit" component={Link} to="/findPlayer">
-                Find Players
-              </Button>
-              <Button color="inherit" component={Link} to="/topTeams">
-                Top Teams
-              </Button>
-              <Button color="inherit" component={Link} to="/options">
-                Options
-              </Button>
-            </div> :
-            <></>)
-          }
-
-          {(user.isAuth ? (
-            <>
-              <Button color="inherit" component={Link} to="/me">
-                firstName lastName
-              </Button>
-              <Button color="inherit" component={Link} to="/login">
-                Log out
-              </Button>
-            </>
-          ) : (
+            <nav>
+            <div class="nav-wrapper green darken-4">
+              <a href="/" class="brand-logo logo left">Logo</a>
+              <ul id="nav-mobile" class="ml-6r hide-on-med-and-down">
+                <li><a href="me">My Profile</a></li>
+                <li><a href="myTeams">MyTeams</a></li>
+                <li><a href="options">Options</a></li>
+              </ul>
+              <a class="right mr-1r" href="login">Unlogin</a>
+            </div>
+          </nav>
+            // <div className={classes.rightToolbar}>
+            //   <Button color="inherit" component={Link} to="/me">
+            //     My Profile
+            //   </Button>
+            //   <Button color="inherit" component={Link} to="/myTeams">
+            //     My teams
+            //   </Button>
+            //   <Button color="inherit" component={Link} to="/findPlayer">
+            //     Find Players
+            //   </Button>
+            //   <Button color="inherit" component={Link} to="/topTeams">
+            //     Top Teams
+            //   </Button>
+            //   <Button color="inherit" component={Link} to="/options">
+            //     Options
+            //   </Button>
+            //   <>
+            //   <Button color="inherit" component={Link} to="/me">
+            //     firstName lastName
+            //   </Button>
+            //   <Button onClick={() => user.setIsAuth(false)}  color="inherit" component={Link} to="/login">
+            //     Log out
+            //   </Button>
+            //   </>
+            // </div> 
+            :
             <>
               <Button color="inherit" component={Link} to="/login">
                 Login
@@ -84,9 +90,8 @@ const App = observer(() => {
               <Button color="inherit" component={Link} to="/registration">
                 Registration
               </Button>
-            </>
-          ))}
-        </Toolbar>
+              </>)
+          }
       </AppBar>
 
       <AppRoutes />

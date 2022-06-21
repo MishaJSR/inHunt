@@ -1,0 +1,26 @@
+@import "~materialize-css/dist/css/materialize.min.css";
+
+.ml-6r {
+    margin-left: 6.5rem;
+}
+.ml-1r {
+    margin-left: 1rem;
+}
+.mr-1r {
+    margin-right: 1rem;
+}
+li {
+    list-style-type: none; /* Убираем маркеры */
+   }
+a:hover {
+    background-color: rgba(0,0,0,.1);
+  }
+
+a {
+    display: block !important;
+    padding: 0 15px !important;
+}
+
+.logo {
+    padding: 0 1rem !important;
+}

@@ -15,11 +15,12 @@ const MyProfile = observer( () => {
 
   return <div>
     
-    <Container fixed>
+    {/* <Container fixed>
       <div><h1>{user.Myuser.email}</h1></div>
       <div><h2>{user.Myuser.nick}</h2></div>
       <div><h3>{user.Myuser.type}</h3></div>
-    </Container>
+    </Container> */}
+    My Prifile
 	  
   </div>
 }
