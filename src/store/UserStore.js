@@ -43,6 +43,9 @@ export default class UserStore {
     setSurname(str) {
         this._user.surname = str
     }
+    setEmail(str) {
+        this._user.email = str
+    }
     setFieldIsChanged(bool) {
         this._profile.fieldIsChanged = bool
     }
@@ -65,6 +68,15 @@ export default class UserStore {
 
     isNameChange(){
         if (this._user.name == this._profile.lastName) return false; else return true
+    }
+    isStatusChange(){
+        if (this._user.status == this._profile.lastStatus) return false; else return true
+    }
+    isSurnameChange(){
+        if (this._user.surname == this._profile.lastSurname) return false; else return true
+    }
+    isEmailChange(){
+        if (this._user.email == this._profile.lastEmail) return false; else return true
     }
 
 

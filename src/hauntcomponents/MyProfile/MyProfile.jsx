@@ -19,6 +19,24 @@ const MyProfile = observer(() => {
     console.log(user.isNameChange())
   }
 
+  let onStatusChange = () => {
+    let textOnChange = rStatus.current.value;
+    user.setStatus(textOnChange);
+    user.isStatusChange() ? user.setFieldIsChanged(true) : user.setFieldIsChanged(false);
+  }
+
+  let onSurnameChange = () => {
+    let textOnChange = rLastName.current.value;
+    user.setSurname(textOnChange);
+    user.isSurnameChange() ? user.setFieldIsChanged(true) : user.setFieldIsChanged(false);
+  }
+
+  let onEmailChange = () => {
+    let textOnChange = rEmail.current.value;
+    user.setEmail(textOnChange);
+    user.isEmailChange() ? user.setFieldIsChanged(true) : user.setFieldIsChanged(false);
+  }
+
   const navigate = useNavigate();
 
   const { user } = useContext(Context);
@@ -70,15 +88,15 @@ const MyProfile = observer(() => {
               <input id="first_name" type="text" class="validate" value={user.getUser().name} onChange={onNameChange} ref={rFristName} />
             </div>
             <div class="input-field col s6">
-              <input id="last_name" type="text" class="validate" value={user.getUser().surname} ref={rLastName} />
+              <input id="last_name" type="text" class="validate" value={user.getUser().surname} onChange={onSurnameChange} ref={rLastName} />
             </div>
           </div>
           <div class="row">
             <div class="input-field col s6">
-              <input id="first_name" type="text" class="validate" value={user.getUser().status} ref={rStatus} />
+              <input id="first_name" type="text" class="validate" value={user.getUser().status} onChange={onStatusChange} ref={rStatus} />
             </div>
             <div class="input-field col s6">
-              <input id="email" type="email" class="validate" value={user.getUser().email} ref={rEmail} />
+              <input id="email" type="email" class="validate" value={user.getUser().email} onChange={onEmailChange} ref={rEmail} />
             </div>
           </div>
           <div class="row">
