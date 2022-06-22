@@ -25,7 +25,7 @@ const AppRoutes = observer(() =>
             <Route path="/findPlayer" element={<FindPlayers />} />
             <Route path="/topTeams" element={<TopTeams />} />
             <Route path="/options" element={<Options />} />
-            <Route path="*" element={<NoFond />} />
+            <Route path="*" element={<StartPage />} />
         </Routes>
     ) :         
     <Routes>

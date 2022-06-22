@@ -27,7 +27,7 @@ const MyProfile = observer(() => {
         <div class="col xl4 l6 m6 s12 center-align">
           <div class="ava-img">
             <div class="wrapper-img">
-              <img src={user.avaImg} class="img-center-circle" alt="" />
+              <img src={user.getUser().avaImg} class="img-center-circle" alt="" />
             </div>
           </div>
           <div class="ava-img">
@@ -41,12 +41,12 @@ const MyProfile = observer(() => {
 
         <div className="col xl8 l6 m6 s12">
           <div>
-            <h2>{user.name} {user.surname}</h2>
+            <h2>{user.getUser().name} {user.getUser().surname}</h2>
           </div>
           <div>
-            <h5>{user.status}</h5>
+            <h5>{user.getUser().status}</h5>
           </div>
-          <div>{user.about}</div>
+          <div>{user.getUser().about}</div>
         </div>
       </div>
     </div>
@@ -65,12 +65,6 @@ const MyProfile = observer(() => {
             </div>
           </div>
           <div class="row">
-            <div class="input-field col s12">
-              <input disabled value="I am not editable" id="disabled" type="text" class="validate" />
-              <label for="disabled">Disabled</label>
-            </div>
-          </div>
-          <div class="row">
             <div class="input-field col s6">
               <input id="password" type="password" class="validate" />
               <label for="password">Change Password</label>
@@ -84,16 +78,6 @@ const MyProfile = observer(() => {
             <div class="input-field col s12">
               <input id="email" type="email" class="validate" />
               <label for="email">New Mail</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col s12">
-              This is an inline input field:
-              <div class="input-field inline">
-                <input id="email_inline" type="email" class="validate" />
-                <label for="email_inline">Email</label>
-                <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
-              </div>
             </div>
           </div>
           <div class="row">

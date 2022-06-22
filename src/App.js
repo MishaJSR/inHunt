@@ -8,7 +8,7 @@ import {
 import React, { useContext, useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import { useNavigate } from 'react-router';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { Context } from "./index";
 import './App.css';
 import AppRoutes from './Routes/routes';
@@ -32,65 +32,37 @@ const App = observer(() => {
   const { user } = useContext(Context)
   const classes = useStyles();
 
-
   return (
     <div className={classes.root}>
-
-          {/* <Typography variant="h6" className={classes.title}>
-            InHunt
-          </Typography>
-          <div className={classes.rightToolbar}>
-            <Button color="inherit" component={Link} to="/">
-              StartPage
-            </Button>
-          </div> */}
           {(user.isAuth ?
             <nav>
             <div class="nav-wrapper green darken-4">
-              <a href="/" class="brand-logo pd-3r left">InHunt</a>
+            <Link class="brand-logo pd-3r left" to="/">InHunt</Link>
+              {/* <a href="/" class="brand-logo pd-3r left">InHunt</a> */}
               <ul id="nav-mobile" class="ml-12r hide-on-med-and-down">
-                <li><a href="me">My Profile</a></li>
-                <li><a href="myTeams">MyTeams</a></li>
-                <li><a href="options">Options</a></li>
+              <li>
+              <NavLink to="/me">My Profile</NavLink>
+              </li>
+              <li>
+              <NavLink to="/myTeams">MyTeams</NavLink>
+              </li>
+              <li>
+              <NavLink to="/options">Options</NavLink>
+              </li>
               </ul>
-              <a class="right pd-2r" href="/login" onClick={() => user.setIsAuth(false)}>Unlogin</a>
+              <Link class="right pd-2r" to="/login" onClick={() => user.setIsAuth(false)}>Unlogin</Link>
             </div>
           </nav>
-            // <div className={classes.rightToolbar}>
-            //   <Button color="inherit" component={Link} to="/me">
-            //     My Profile
-            //   </Button>
-            //   <Button color="inherit" component={Link} to="/myTeams">
-            //     My teams
-            //   </Button>
-            //   <Button color="inherit" component={Link} to="/findPlayer">
-            //     Find Players
-            //   </Button>
-            //   <Button color="inherit" component={Link} to="/topTeams">
-            //     Top Teams
-            //   </Button>
-            //   <Button color="inherit" component={Link} to="/options">
-            //     Options
-            //   </Button>
-            //   <>
-            //   <Button color="inherit" component={Link} to="/me">
-            //     firstName lastName
-            //   </Button>
-            //   <Button onClick={() => user.setIsAuth(false)}  color="inherit" component={Link} to="/login">
-            //     Log out
-            //   </Button>
-            //   </>
-            // </div> 
             :
             <>
             <nav>
             <div class="nav-wrapper green darken-4">
-              <a href="/" class="brand-logo pd-3r left">InHunt</a>
+              <Link to="/" class="brand-logo pd-3r left">InHunt</Link>
               <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="login">Login</a></li>
-                <li><a href="registration">Registration</a></li>
+                <li><Link to="login">Login</Link></li>
+                <li><Link to="registration">Registration</Link></li>
               </ul>
-              <a class="right pd-2r" href="/me" onClick={() => user.setIsAuth(true)}>Login</a>
+              <Link class="right pd-2r" to="/me" onClick={() => user.setIsAuth(true)}>log</Link>
             </div>
           </nav>
               </>)
