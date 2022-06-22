@@ -27,3 +27,20 @@
 .fz-70{
     font-size: 70%;
 }
+
+.wrapper-img{
+    width: 300px;
+    height: 300px;
+}
+
+.ava-img {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ava-img img {
+height: 100%;
+width: auto;
+}
+
