@@ -8,19 +8,30 @@ import './MyProfile.css';
 
 const MyProfile = observer(() => {
 
+  let saveChanges = () => {
+    user.setUserInfo();
+  }
+
+  let onNameChange = () => {
+    let textOnChange = rFristName.current.value;
+    user.setName(textOnChange);
+    user.isNameChange() ? user.setFieldIsChanged(true) : user.setFieldIsChanged(false);
+    console.log(user.isNameChange())
+  }
 
   const navigate = useNavigate();
 
-  const { user } = useContext(Context)
+  const { user } = useContext(Context);
 
-
+  let rFristName = React.createRef();
+  let rLastName = React.createRef();
+  let rStatus = React.createRef();
+  let rChangePass = React.createRef();
+  let rRepeatPass = React.createRef();
+  let rEmail = React.createRef();
+  
   return <div>
 
-    {/* <Container fixed>
-      <div><h1>{user.Myuser.email}</h1></div>
-      <div><h2>{user.Myuser.nick}</h2></div>
-      <div><h3>{user.Myuser.type}</h3></div>
-    </Container> */}
     <div class="container mt-2r">
       <div class="row ">
 
@@ -56,33 +67,34 @@ const MyProfile = observer(() => {
         <form class="col s12">
           <div class="row">
             <div class="input-field col s6">
-              <input id="first_name" type="text" class="validate" />
-              <label for="first_name">First Name</label>
+              <input id="first_name" type="text" class="validate" value={user.getUser().name} onChange={onNameChange} ref={rFristName} />
             </div>
             <div class="input-field col s6">
-              <input id="last_name" type="text" class="validate" />
-              <label for="last_name">Last Name</label>
+              <input id="last_name" type="text" class="validate" value={user.getUser().surname} ref={rLastName} />
             </div>
           </div>
           <div class="row">
             <div class="input-field col s6">
-              <input id="password" type="password" class="validate" />
+              <input id="first_name" type="text" class="validate" value={user.getUser().status} ref={rStatus} />
+            </div>
+            <div class="input-field col s6">
+              <input id="email" type="email" class="validate" value={user.getUser().email} ref={rEmail} />
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="password" type="password" class="validate" ref={rChangePass} />
               <label for="password">Change Password</label>
             </div>
             <div class="input-field col s6">
-              <input id="password" type="password" class="validate" />
+              <input id="password" type="password" class="validate" ref={rRepeatPass} />
               <label for="password">Repeat Password</label>
             </div>
           </div>
           <div class="row">
-            <div class="input-field col s12">
-              <input id="email" type="email" class="validate" />
-              <label for="email">New Mail</label>
-            </div>
-          </div>
-          <div class="row">
             <div class="col s12">
-              <a class="waves-effect waves-light btn mt-1vh fz-70 green" onClick={() => user.setNewAva()}>Save Changes</a>
+              <a  class={user.getProfile().fieldIsChanged  ? "waves-effect waves-light btn mt-1vh fz-70 green" : "waves-effect waves-light btn mt-1vh fz-70 grey disabled"} onClick={() => saveChanges()}>Save Changes</a>
+              {/* добавить в онклик запись ласт неймов и тд*/}
             </div>
           </div>
         </form>
