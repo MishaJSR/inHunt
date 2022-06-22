@@ -40,7 +40,11 @@
     align-items: center;
 }
 .ava-img img {
-height: 100%;
-width: auto;
+min-height: 100%;
+min-width: 100%;
 }
 
+.wrapper-img-but{
+    width: 300px;
+    height: auto;
+}

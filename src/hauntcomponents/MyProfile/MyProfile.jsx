@@ -28,9 +28,10 @@ const MyProfile = observer(() => {
           <div class="ava-img">
             <div class="wrapper-img">
               <img src={user.avaImg} class="img-center-circle" alt="" />
-
             </div>
-            <div>
+          </div>
+          <div class="ava-img">
+          <div class="wrapper-img-but"> 
                 <a onClick={() => user.setNewAva("https://st.depositphotos.com/1703013/1328/i/450/depositphotos_13286310-stock-photo-bird-hunting-silhouette.jpg")}
                   class="waves-effect waves-light btn mt-1vh fz-60 green">Сменить фото</a>
               </div>
