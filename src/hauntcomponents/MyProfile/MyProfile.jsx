@@ -9,7 +9,8 @@ import './MyProfile.css';
 const MyProfile = observer(() => {
 
   let saveChanges = () => {
-    user.setUserInfo();
+    user.setUserInfo(rFristName.current.value, rLastName.current.value, rStatus.current.value, rEmail.current.value);
+
   }
 
   let onNameChange = () => {
@@ -70,12 +71,12 @@ const MyProfile = observer(() => {
 
         <div className="col xl8 l6 m6 s12">
           <div>
-            <h2>{user.getUser().name} {user.getUser().surname}</h2>
+            <h2>{user.getProfile().lastName} {user.getProfile().lastSurname}</h2>
           </div>
           <div>
-            <h5>{user.getUser().status}</h5>
+            <h5>{user.getProfile().lastStatus}</h5>
           </div>
-          <div>{user.getUser().about}</div>
+          <div>{user.getProfile().lastAbout}</div>
         </div>
       </div>
     </div>
@@ -111,7 +112,7 @@ const MyProfile = observer(() => {
           </div>
           <div class="row">
             <div class="col s12">
-              <a  class={user.getProfile().fieldIsChanged  ? "waves-effect waves-light btn mt-1vh fz-70 green" : "waves-effect waves-light btn mt-1vh fz-70 grey disabled"} onClick={() => saveChanges()}>Save Changes</a>
+              <a  class={user.getProfile().fieldIsChanged  ? "waves-effect waves-light btn mt-1vh fz-70 green" : "waves-effect waves-light btn mt-1vh fz-70 grey disabled"} onClick={saveChanges}>Save Changes</a>
               {/* добавить в онклик запись ласт неймов и тд*/}
             </div>
           </div>

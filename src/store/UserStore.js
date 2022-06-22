@@ -19,6 +19,7 @@ export default class UserStore {
             lastStatus: "empty status",
             lastAbout: "Nothing",
             lastEmail: "mixan_45@mail.ru",
+            passwd: "123",
             fieldIsChanged: false
         }
         makeAutoObservable(this)
@@ -81,8 +82,12 @@ export default class UserStore {
 
 
 
-    setUserInfo(obj) {
-
+    setUserInfo(name, surname, status, email) {
+        this._profile.fieldIsChanged = false;
+        this.setLastName(name);
+        this.setLastSurname(surname);
+        this.setLastStatus(status);
+        this.setLastEmail(email);
     }
 
     // setMyUser(login) {
