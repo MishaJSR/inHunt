@@ -28,10 +28,15 @@
     font-size: 70%;
 }
 
-.wrapper-img{
+.wrapper-img-ava{
     width: 300px;
     height: 300px;
 }
+
+.my-butt{
+    border: 1px solid  black;
+}
+
 
 .ava-img {
     overflow: hidden;
@@ -39,12 +44,42 @@
     justify-content: center;
     align-items: center;
 }
-.ava-img img {
-min-height: 100%;
-min-width: 100%;
-}
 
 .wrapper-img-but{
     width: 300px;
     height: auto;
+}
+
+.coment-block{
+    border-radius: 2%;
+    border: 2px solid  green;
+    width: 300px;
+    height: 300px;
+}
+
+.container-top {
+    width: 90%;
+    margin: 1% 8% !important;
+}
+
+.wrapper-img-friends{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid  green;
+}
+
+.pad-0{
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    padding: 0 0.1rem !important;
+}
+
+.mar-0{
+    margin-bottom: 2rem;
+    margin: 0 0 !important;
+}
+
+.blck {
+    display: block !important;
 }

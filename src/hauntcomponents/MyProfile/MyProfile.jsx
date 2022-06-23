@@ -5,6 +5,7 @@ import { Container } from '@mui/material';
 import { Link, useNavigate } from "react-router-dom";
 import { observer } from 'mobx-react-lite';
 import './MyProfile.css';
+import 'materialize-css'
 
 const MyProfile = observer(() => {
 
@@ -12,7 +13,7 @@ const MyProfile = observer(() => {
 
   const { user } = useContext(Context);
 
-  
+
   return <div>
 
     <div class="container mt-2r">
@@ -20,15 +21,18 @@ const MyProfile = observer(() => {
 
         <div class="col xl4 l6 m6 s12 center-align">
           <div class="ava-img">
-            <div class="wrapper-img">
-              <img src={user.getUser().avaImg} class="img-center-circle" alt="" />
+            <a href="/">
+            <div class="wrapper-img-ava">
+              <img src={user.getUser().avaImg} class="img-center-circle" alt=""/>
             </div>
+            </a>
+
           </div>
           <div class="ava-img">
-          <div class="wrapper-img-but"> 
-                <a onClick={() => user.setNewAva("https://st.depositphotos.com/1703013/1328/i/450/depositphotos_13286310-stock-photo-bird-hunting-silhouette.jpg")}
-                  class="waves-effect waves-light btn mt-1vh fz-60 green">Сменить фото</a>
-              </div>
+            <div class="wrapper-img-but">
+              <a onClick={() => user.setNewAva("https://st.depositphotos.com/1703013/1328/i/450/depositphotos_13286310-stock-photo-bird-hunting-silhouette.jpg")}
+                class="waves-effect waves-light btn mt-1vh fz-60 green my-butt blck">Сменить фото</a>
+            </div>
           </div>
 
         </div>
@@ -41,6 +45,63 @@ const MyProfile = observer(() => {
             <h5>{user.getProfile().lastStatus}</h5>
           </div>
           <div>{user.getProfile().lastAbout}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mt-2r">
+      <div class="row ">
+
+        <div class="col xl4 l6 m6 s12 center-align">
+          <div class="ava-img">
+            <div class="coment-block">
+              <div className="container-top center-align">
+                <div>
+                  <h5>Friends</h5>
+                </div>
+              </div>
+              <div class="row mar-0">
+                <div class="col pad-0 xl4 l4 m6 s6 ">
+                  <div className="ava-img">
+                    <a className="wrapper-img-friends"></a>
+                  </div>
+                </div>
+                <div class="col pad-0 xl4 l4 m6 s6 ">
+                  <div className="ava-img">
+                    <div className="wrapper-img-friends"></div>
+                  </div>
+                </div>
+                <div class="col pad-0 xl4 l4 m6 s6 ">
+                  <div className="ava-img">
+                    <div className="wrapper-img-friends"></div>
+                  </div>
+                </div>
+                <div class="col pad-0 xl4 l4 m6 s6 ">
+                  <div className="ava-img">
+                    <div className="wrapper-img-friends"></div>
+                  </div>
+                </div>
+                <div class="col pad-0 xl4 l4 m6 s6">
+                <div className="ava-img">
+                    <div className="wrapper-img-friends"></div>
+                  </div>
+                </div>
+                <div class="col pad-0 xl4 l4 m6 s6">
+                <div className="ava-img">
+                    <div className="wrapper-img-friends"></div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="ava-img">
+            <div class="wrapper-img-but">
+              <a  onClick={() => user.setNewAva("https://st.depositphotos.com/1703013/1328/i/450/depositphotos_13286310-stock-photo-bird-hunting-silhouette.jpg")}
+                class="waves-effect waves-light btn mt-1vh fz-60 green my-butt blck">Show All</a>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>

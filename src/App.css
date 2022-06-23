@@ -22,7 +22,6 @@ a:hover {
   }
 
 a {
-    display: block !important;
-    padding: 0 15px !important;
+    padding: 0 15px ;
 }
 
