@@ -56,37 +56,41 @@ const MyProfile = observer(() => {
           <div class="ava-img">
             <div class="coment-block">
               <div className="container-top center-align">
-                <div>
+                <div class="header-friends" >
                   <h5>Friends</h5>
                 </div>
               </div>
               <div class="row mar-0">
-                <div class="col pad-0 xl4 l4 m6 s6 ">
+                <div class="col pad-0 xl4 l4 m4 s6 ">
                   <div className="ava-img">
-                    <a className="wrapper-img-friends"></a>
+                    <a class="no-pad" href="/me">
+                    <div className="wrapper-img-friends">
+                        <img src={user.getUser().avaImg} class="round" alt=""/>
+                    </div>
+                    </a>
                   </div>
                 </div>
-                <div class="col pad-0 xl4 l4 m6 s6 ">
-                  <div className="ava-img">
-                    <div className="wrapper-img-friends"></div>
-                  </div>
-                </div>
-                <div class="col pad-0 xl4 l4 m6 s6 ">
-                  <div className="ava-img">
-                    <div className="wrapper-img-friends"></div>
-                  </div>
-                </div>
-                <div class="col pad-0 xl4 l4 m6 s6 ">
+                <div class="col pad-0 xl4 l4 m4 s6 ">
                   <div className="ava-img">
                     <div className="wrapper-img-friends"></div>
                   </div>
                 </div>
-                <div class="col pad-0 xl4 l4 m6 s6">
+                <div class="col pad-0 xl4 l4 m4 s6 ">
+                  <div className="ava-img">
+                    <div className="wrapper-img-friends"></div>
+                  </div>
+                </div>
+                <div class="col pad-0 xl4 l4 m4 s6 ">
+                  <div className="ava-img">
+                    <div className="wrapper-img-friends"></div>
+                  </div>
+                </div>
+                <div class="col pad-0 xl4 l4 m4 s6">
                 <div className="ava-img">
                     <div className="wrapper-img-friends"></div>
                   </div>
                 </div>
-                <div class="col pad-0 xl4 l4 m6 s6">
+                <div class="col pad-0 xl4 l4 m4 s6">
                 <div className="ava-img">
                     <div className="wrapper-img-friends"></div>
                   </div>
