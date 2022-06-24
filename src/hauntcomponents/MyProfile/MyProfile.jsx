@@ -21,7 +21,7 @@ const MyProfile = observer(() => {
 
         <div class="col xl4 l6 m6 s12 center-align">
           <div class="ava-img">
-            <a href="/">
+            <a class="no-pad" href="/me">
             <div class="wrapper-img-ava">
               <img src={user.getUser().avaImg} class="img-center-circle" alt=""/>
             </div>

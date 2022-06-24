@@ -83,3 +83,7 @@
 .blck {
     display: block !important;
 }
+
+.no-pad{
+    padding: 0 0 !important;
+}
