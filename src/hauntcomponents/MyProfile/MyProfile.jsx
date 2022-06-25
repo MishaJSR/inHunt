@@ -13,11 +13,20 @@ const MyProfile = observer(() => {
 
   const { user } = useContext(Context);
 
+  let screenWidth = window.screen.width;
 
-  return <div>
+  let frMass = user.getProfile().friends;//посмотреть реакцию на изменение ширины экрана через getElementById
 
-    <div class="container pt-2r">
-      <div class="row row-rev ">
+  if ((screenWidth <= 670) && (screenWidth >= 600)) frMass = frMass.slice(0,4);
+  if (screenWidth < 600) frMass = frMass.slice(0,3);
+
+
+
+
+  return <div class="bg-grey">
+
+    <div class="container bg-white pt-1r">
+      <div class="row row-rev row-bot">
 
         <div class="col xl4 l6 m6 s12 center-align">
           <div class="ava-img">
@@ -49,7 +58,7 @@ const MyProfile = observer(() => {
       </div>
     </div>
 
-    <div class="container pt-2r">
+    <div class="container bg-white">
       <div class="row ">
 
         <div class="col xl4 l6 m6 s12 center-align">
@@ -61,12 +70,13 @@ const MyProfile = observer(() => {
                 </div>
               </div>
               <div class="row mar-0">
-                {user.getProfile().friends.map((el) =>
+                {}
+                {frMass.map((el) =>
                   <div>
                     <div >
-                      <div class="col pad-0 xl4 l4 m4 xm s4 ">
+                      <div  class="col pad-0 xl4 l4 m4 xm s4  ">
                         <div className="ava-img">
-                          <a class="no-pad a-img" href={"/profiles/"+el.id}>
+                          <a class="no-pad a-img" href={"/profiles/" + el.id}>
                             <div className="wrapper-img-friends">
                               <img src={el.ava} class="round" alt="" />
                             </div>
@@ -78,60 +88,6 @@ const MyProfile = observer(() => {
                     </div>
                   </div>
                 )}
-                {/* <div class="col pad-0 xl4 l4 m4 xm s4 ">
-                  <div className="ava-img">
-                    <a class="no-pad a-img" href="/me">
-                    <div className="wrapper-img-friends">
-                        <img src={user.getUser().avaImg} class="round" alt=""/>
-                    </div>
-                    </a>
-                  </div>
-                </div>
-                <div class="col pad-0 xl4 l4 m4 xm s4 ">
-                  <div className="ava-img">
-                  <a class="no-pad a-img" href="/me">
-                    <div className="wrapper-img-friends">
-                        <img src={user.getUser().avaImg} class="round" alt=""/>
-                    </div>
-                    </a>
-                  </div>
-                </div>
-                <div class="col pad-0 xl4 l4 m4 xm s4 ">
-                  <div className="ava-img">
-                  <a class="no-pad a-img" href="/me">
-                    <div className="wrapper-img-friends">
-                        <img src={user.getUser().avaImg} class="round" alt=""/>
-                    </div>
-                    </a>
-                  </div>
-                </div>
-                <div class="col pad-0 xl4 l4 m4 xm s4 ">
-                  <div className="ava-img">
-                  <a class="no-pad a-img" href="/me">
-                    <div className="wrapper-img-friends">
-                        <img src={user.getUser().avaImg} class="round" alt=""/>
-                    </div>
-                    </a>
-                  </div>
-                </div>
-                <div class="col pad-0 xl4 l4 m4 xm s4">
-                <div className="ava-img">
-                <a class="no-pad a-img" href="/me">
-                    <div className="wrapper-img-friends">
-                        <img src={user.getUser().avaImg} class="round" alt=""/>
-                    </div>
-                    </a>
-                  </div>
-                </div>
-                <div class="col pad-0 xl4 l4 m4 xm s4">
-                <div className="ava-img">
-                <a class="no-pad a-img" href="/me">
-                    <div className="wrapper-img-friends">
-                        <img src={user.getUser().avaImg} class="round" alt=""/>
-                    </div>
-                    </a>
-                  </div>
-                </div> */}
               </div>
 
             </div>

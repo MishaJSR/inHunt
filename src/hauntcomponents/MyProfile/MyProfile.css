@@ -1,8 +1,21 @@
+.bg-grey{
+    background-color: rgb(223, 223, 223);
+}
+
+.bg-white{
+    background-color: white !important;
+}
+
+.row-bot{
+    margin-bottom: 0 !important;
+    padding-bottom: 20px !important;
+}
+
 .ml-1r {
     margin-left: 1rem;
 }
-.pt-2r {
-    padding-top: 2rem;
+.pt-1r {
+    padding-top: 1rem;
 }
 .mt-1vh {
     margin-top: 1vh;
@@ -121,6 +134,9 @@
         margin-left: auto !important;
         left: auto !important;
         right: auto !important;
+    }
+    .bl-4x4{
+        font-size: 30px;
     }
 }
 
