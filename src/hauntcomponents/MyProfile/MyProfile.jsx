@@ -16,15 +16,15 @@ const MyProfile = observer(() => {
 
   return <div>
 
-    <div class="container mt-2r">
+    <div class="container pt-2r">
       <div class="row row-rev ">
 
         <div class="col xl4 l6 m6 s12 center-align">
           <div class="ava-img">
             <a class="no-pad" href="/me">
-            <div class="wrapper-img-ava">
-              <img src={user.getUser().avaImg} class="img-center-circle" alt=""/>
-            </div>
+              <div class="wrapper-img-ava">
+                <img src={user.getUser().avaImg} class="img-center-circle" alt="" />
+              </div>
             </a>
 
           </div>
@@ -49,7 +49,7 @@ const MyProfile = observer(() => {
       </div>
     </div>
 
-    <div class="container mt-2r">
+    <div class="container pt-2r">
       <div class="row ">
 
         <div class="col xl4 l6 m6 s12 center-align">
@@ -61,7 +61,24 @@ const MyProfile = observer(() => {
                 </div>
               </div>
               <div class="row mar-0">
-                <div class="col pad-0 xl4 l4 m4 xm s4 ">
+                {user.getProfile().friends.map((el) =>
+                  <div>
+                    <div >
+                      <div class="col pad-0 xl4 l4 m4 xm s4 ">
+                        <div className="ava-img">
+                          <a class="no-pad a-img" href={"/profiles/"+el.id}>
+                            <div className="wrapper-img-friends">
+                              <img src={el.ava} class="round" alt="" />
+                            </div>
+                          </a>
+                        </div>
+                        <p class="p-0">{el.name}</p>
+                        <p class="p-0">{el.surname}</p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                {/* <div class="col pad-0 xl4 l4 m4 xm s4 ">
                   <div className="ava-img">
                     <a class="no-pad a-img" href="/me">
                     <div className="wrapper-img-friends">
@@ -114,14 +131,14 @@ const MyProfile = observer(() => {
                     </div>
                     </a>
                   </div>
-                </div>
+                </div> */}
               </div>
 
             </div>
           </div>
           <div class="ava-img">
             <div class="wrapper-img-but">
-              <a  onClick={() => user.setNewAva("https://st.depositphotos.com/1703013/1328/i/450/depositphotos_13286310-stock-photo-bird-hunting-silhouette.jpg")}
+              <a onClick={() => user.setNewAva("https://st.depositphotos.com/1703013/1328/i/450/depositphotos_13286310-stock-photo-bird-hunting-silhouette.jpg")}
                 class="waves-effect waves-light btn mt-1vh fz-60 green my-butt blck">Show All</a>
             </div>
           </div>

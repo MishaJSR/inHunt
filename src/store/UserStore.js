@@ -25,32 +25,38 @@ export default class UserStore {
                 {
                     id: 1, 
                     name: "Oleg",
-                    surname: "Yarofeev"
+                    surname: "Yarofeev",
+                    ava: "https://static.ohotniki.ru/upload/ohotniki/475/42/8a/ca/DETAIL_PICTURE_178388_71836462.jpg"
                 },
                 {
                     id: 2, 
                     name: "Petr",
-                    surname: "Anisimov"
+                    surname: "Anisimov",
+                    ava:"https://ebftour.ru/images/load/Image/1(334).jpg"
                 },
                 {
                     id: 3, 
                     name: "Maksin",
-                    surname: "Petrov"
+                    surname: "Petrov",
+                    ava:"https://009.ru/assets/images/tickets/duck_2.JPG"
                 },
                 {
                     id: 4, 
                     name: "Pasha",
-                    surname: "Petropavlov"
+                    surname: "Petropavlov",
+                    ava:"https://trofey.ru/upload/medialibrary/5fa/wo6oj8y7luob2etqt2u95d87scs5zmck/Ohotnichja-jetika-ili-moralnyj-kodeks-ohotnika-_6_.jpg"
                 },
                 {
                     id: 5, 
                     name: "Maksin",
-                    surname: "Galizamov"
+                    surname: "Galizamov",
+                    ava:"https://www.profguide.io/images/article/a/8/O5kaPDNgAr.jpg"
                 },
                 {
                     id: 6, 
                     name: "Fedor",
-                    surname: "Kozlov"
+                    surname: "Kozlov",
+                    ava:"https://img2.voenpro.ru/images/den-ohotnika-16.jpg"
                 }
             ]
         }
