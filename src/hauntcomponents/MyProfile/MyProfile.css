@@ -66,17 +66,17 @@
     width: 75px;
     height: 75px;
     border-radius: 50%;
-    border: 2px solid  green;
+    border: 1px  black;
     overflow: hidden;
 }
 
 .pad-0{
     margin-bottom: 1.5rem;
-    padding: 0 0.5rem !important;
+    padding: 0 .25rem !important;
 }
 
 .mar-0{
-    margin: 0 1rem !important;
+    margin: 0 .5rem !important;
 }
 
 .blck {
@@ -92,10 +92,52 @@
 }
 
 .round{
-        width: 100%;
-        height: auto;
-        max-height: fit-content;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
+    width: 100%;
+    height: auto;
+    max-height: fit-content;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
+
+.a-img{
+    display: block;
+    border-radius: 50%;
+}
+
+/* @media only screen and (min-width: 800px) and (max-width: 991.98px){
+    .lx{
+        width: 50% !important;
+        margin-left: auto !important;
+        left: auto !important;
+        right: auto !important;
+    }
+} */
+
+@media only screen and (min-width: 600px) and (max-width: 670px){
+    .xm{
+        width: 50% !important;
+        margin-left: auto !important;
+        left: auto !important;
+        right: auto !important;
+    }
+}
+
+/* .or-2{
+    float: right !important;
+}
+.or-1{
+    float: left !important;
+} */
+
+@media only screen and (min-width: 300px) and (max-width: 599px){
+    .row-rev{
+        display: flex !important; 
+        flex-direction: column-reverse;
+    }
+    .or-1-mb{
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+}
+

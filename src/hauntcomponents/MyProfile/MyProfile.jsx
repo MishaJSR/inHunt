@@ -17,7 +17,7 @@ const MyProfile = observer(() => {
   return <div>
 
     <div class="container mt-2r">
-      <div class="row ">
+      <div class="row row-rev ">
 
         <div class="col xl4 l6 m6 s12 center-align">
           <div class="ava-img">
@@ -37,7 +37,7 @@ const MyProfile = observer(() => {
 
         </div>
 
-        <div className="col xl8 l6 m6 s12">
+        <div className="col xl8 l6 m6 s12 or-1-mb">
           <div>
             <h2>{user.getProfile().lastName} {user.getProfile().lastSurname}</h2>
           </div>
@@ -61,38 +61,58 @@ const MyProfile = observer(() => {
                 </div>
               </div>
               <div class="row mar-0">
-                <div class="col pad-0 xl4 l4 m4 s6 ">
+                <div class="col pad-0 xl4 l4 m4 xm s4 ">
                   <div className="ava-img">
-                    <a class="no-pad" href="/me">
+                    <a class="no-pad a-img" href="/me">
                     <div className="wrapper-img-friends">
                         <img src={user.getUser().avaImg} class="round" alt=""/>
                     </div>
                     </a>
                   </div>
                 </div>
-                <div class="col pad-0 xl4 l4 m4 s6 ">
+                <div class="col pad-0 xl4 l4 m4 xm s4 ">
                   <div className="ava-img">
-                    <div className="wrapper-img-friends"></div>
+                  <a class="no-pad a-img" href="/me">
+                    <div className="wrapper-img-friends">
+                        <img src={user.getUser().avaImg} class="round" alt=""/>
+                    </div>
+                    </a>
                   </div>
                 </div>
-                <div class="col pad-0 xl4 l4 m4 s6 ">
+                <div class="col pad-0 xl4 l4 m4 xm s4 ">
                   <div className="ava-img">
-                    <div className="wrapper-img-friends"></div>
+                  <a class="no-pad a-img" href="/me">
+                    <div className="wrapper-img-friends">
+                        <img src={user.getUser().avaImg} class="round" alt=""/>
+                    </div>
+                    </a>
                   </div>
                 </div>
-                <div class="col pad-0 xl4 l4 m4 s6 ">
+                <div class="col pad-0 xl4 l4 m4 xm s4 ">
                   <div className="ava-img">
-                    <div className="wrapper-img-friends"></div>
+                  <a class="no-pad a-img" href="/me">
+                    <div className="wrapper-img-friends">
+                        <img src={user.getUser().avaImg} class="round" alt=""/>
+                    </div>
+                    </a>
                   </div>
                 </div>
-                <div class="col pad-0 xl4 l4 m4 s6">
+                <div class="col pad-0 xl4 l4 m4 xm s4">
                 <div className="ava-img">
-                    <div className="wrapper-img-friends"></div>
+                <a class="no-pad a-img" href="/me">
+                    <div className="wrapper-img-friends">
+                        <img src={user.getUser().avaImg} class="round" alt=""/>
+                    </div>
+                    </a>
                   </div>
                 </div>
-                <div class="col pad-0 xl4 l4 m4 s6">
+                <div class="col pad-0 xl4 l4 m4 xm s4">
                 <div className="ava-img">
-                    <div className="wrapper-img-friends"></div>
+                <a class="no-pad a-img" href="/me">
+                    <div className="wrapper-img-friends">
+                        <img src={user.getUser().avaImg} class="round" alt=""/>
+                    </div>
+                    </a>
                   </div>
                 </div>
               </div>

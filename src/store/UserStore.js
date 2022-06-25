@@ -20,7 +20,39 @@ export default class UserStore {
             lastAbout: "Nothing",
             lastEmail: "mixan_45@mail.ru",
             passwd: "123",
-            fieldIsChanged: false
+            fieldIsChanged: false,
+            friends: [
+                {
+                    id: 1, 
+                    name: "Oleg",
+                    surname: "Yarofeev"
+                },
+                {
+                    id: 2, 
+                    name: "Petr",
+                    surname: "Anisimov"
+                },
+                {
+                    id: 3, 
+                    name: "Maksin",
+                    surname: "Petrov"
+                },
+                {
+                    id: 4, 
+                    name: "Pasha",
+                    surname: "Petropavlov"
+                },
+                {
+                    id: 5, 
+                    name: "Maksin",
+                    surname: "Galizamov"
+                },
+                {
+                    id: 6, 
+                    name: "Fedor",
+                    surname: "Kozlov"
+                }
+            ]
         }
         makeAutoObservable(this)
     }
