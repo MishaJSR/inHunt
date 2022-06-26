@@ -54,9 +54,9 @@ const MyProfile = observer(() => {
 
         </div>
 
-        <div className="col xl8 l6 m6 s6 or-1-mb">
+        <div className="col xl8 l6 m6 s6 or-1-mb left-align ">
           <div>
-            <h3>{user.getProfile().lastName} {user.getProfile().lastSurname}</h3>
+            <h3 class="h-0">{user.getProfile().lastName} {user.getProfile().lastSurname}</h3>
           </div>
           <div>
             <h5>{user.getProfile().lastStatus}</h5>
@@ -109,10 +109,10 @@ const MyProfile = observer(() => {
 
         </div>
         <div class="show-more-s">
-          <div class="col s12 center-align">
-            <div class="collection">
-              <a href="/me/friends" class="collection-item"><span class="badge">{frMass.length}</span>Friends</a>
-              <NavLink onClick={() => user.setisGiftsOld(true)} to="/me" class="collection-item"><span class={isGiftsOld ? "badge": "new badge"}>{gifts.length}</span>Gifts</NavLink>
+          <div class="col s12">
+            <div class="collection ">
+              <a href="/me/friends" class="collection-item green-text"><span class="badge black-text">{frMass.length}</span>Friends</a>
+              <a onClick={() => user.setisGiftsOld(true)} href="/me/gifts" class="collection-item green-text"><span class={isGiftsOld ? "badge": "new badge"}>{gifts.length}</span>Gifts</a>
             </div>
           </div>
         </div>

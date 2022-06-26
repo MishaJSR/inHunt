@@ -154,7 +154,6 @@
     } */
     .or-1-mb{
         margin-bottom: 1rem;
-        text-align: center;
     }
     .hide-on-s{
         display: none;
@@ -171,4 +170,8 @@
     .show-more-s{
         display: none;
     }
+}
+
+.h-0{
+    margin: 0 0 !important;
 }
