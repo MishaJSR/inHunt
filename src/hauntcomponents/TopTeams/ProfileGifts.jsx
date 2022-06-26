@@ -1,12 +1,12 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-function TopTeams () {
+function ProfileGifts () {
   return <div>
-	  	TopTeams
+	  	Gifts
   </div>
 
 }
 
 
-export default TopTeams;
+export default ProfileGifts;

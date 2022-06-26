@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import { Context } from '../..';
 import { Container } from '@mui/material';
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { observer } from 'mobx-react-lite';
 import './MyProfile.css';
 import 'materialize-css'
@@ -13,22 +13,30 @@ const MyProfile = observer(() => {
 
   const { user } = useContext(Context);
 
-  let screenWidth = window.screen.width;
+  const [frMass, setfrMass] = useState(user.getProfile().friends);
 
-  let frMass = user.getProfile().friends;//посмотреть реакцию на изменение ширины экрана через getElementById
+  const [gifts, setgifts] = useState(user.getProfile().gifts);
 
-  if ((screenWidth <= 670) && (screenWidth >= 600)) frMass = frMass.slice(0,4);
-  if (screenWidth < 600) frMass = frMass.slice(0,3);
+  const [isGiftsOld, setisGifts] = useState(user.getProfile().isGiftsOld);
 
+  
 
+  // if ((screenWidth <= 670) && (screenWidth >= 600)) frMass = frMass.slice(0,4);
+  // if (screenWidth < 600) frMass = frMass.slice(0,3);
+
+  // window.addEventListener(`resize`, event => {
+  //   if ((window.screen.width <= 670) && (window.screen.width >= 600)) frMass = frMass.slice(0,4);
+  //   if (window.screen.width < 600) setfrMass(frMass.slice(0,3));
+  //   console.log(window.screen.width)
+  // }, false);
 
 
   return <div class="bg-grey">
 
     <div class="container bg-white pt-1r">
-      <div class="row row-rev row-bot">
+      <div class="row row-bot">
 
-        <div class="col xl4 l6 m6 s12 center-align">
+        <div class="col xl4 l6 m6 s6 center-align">
           <div class="ava-img">
             <a class="no-pad" href="/me">
               <div class="wrapper-img-ava">
@@ -46,9 +54,9 @@ const MyProfile = observer(() => {
 
         </div>
 
-        <div className="col xl8 l6 m6 s12 or-1-mb">
+        <div className="col xl8 l6 m6 s6 or-1-mb">
           <div>
-            <h2>{user.getProfile().lastName} {user.getProfile().lastSurname}</h2>
+            <h3>{user.getProfile().lastName} {user.getProfile().lastSurname}</h3>
           </div>
           <div>
             <h5>{user.getProfile().lastStatus}</h5>
@@ -61,7 +69,7 @@ const MyProfile = observer(() => {
     <div class="container bg-white">
       <div class="row ">
 
-        <div class="col xl4 l6 m6 s12 center-align">
+        <div class="col xl4 l6 m6 s12 center-align hide-on-s">
           <div class="ava-img">
             <div class="coment-block">
               <div className="container-top center-align">
@@ -70,11 +78,11 @@ const MyProfile = observer(() => {
                 </div>
               </div>
               <div class="row mar-0">
-                {}
+                { }
                 {frMass.map((el) =>
                   <div>
                     <div >
-                      <div  class="col pad-0 xl4 l4 m4 xm s4  ">
+                      <div class="col pad-0 xl4 l4 m4 xm s4  ">
                         <div className="ava-img">
                           <a class="no-pad a-img" href={"/profiles/" + el.id}>
                             <div className="wrapper-img-friends">
@@ -99,6 +107,14 @@ const MyProfile = observer(() => {
             </div>
           </div>
 
+        </div>
+        <div class="show-more-s">
+          <div class="col s12 center-align">
+            <div class="collection">
+              <a href="/me/friends" class="collection-item"><span class="badge">{frMass.length}</span>Friends</a>
+              <NavLink onClick={() => user.setisGiftsOld(true)} to="/me" class="collection-item"><span class={isGiftsOld ? "badge": "new badge"}>{gifts.length}</span>Gifts</NavLink>
+            </div>
+          </div>
         </div>
       </div>
     </div>

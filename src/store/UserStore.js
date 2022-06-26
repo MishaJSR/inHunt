@@ -21,6 +21,18 @@ export default class UserStore {
             lastEmail: "mixan_45@mail.ru",
             passwd: "123",
             fieldIsChanged: false,
+            isGiftsOld: false,
+            gifts: [
+                {
+                    id: 1,
+                    senderID: 4,
+                    img: "https://static.ohotniki.ru/upload/ohotniki/475/42/8a/ca/DETAIL_PICTURE_178388_71836462.jpg"
+                },                {
+                    id: 2,
+                    senderID: 3,
+                    img: "https://static.ohotniki.ru/upload/ohotniki/475/42/8a/ca/DETAIL_PICTURE_178388_71836462.jpg"
+                }
+            ],
             friends: [
                 {
                     id: 1, 
@@ -87,6 +99,10 @@ export default class UserStore {
     }
     setFieldIsChanged(bool) {
         this._profile.fieldIsChanged = bool
+    }
+
+    setisGiftsOld(bool) {
+        this._profile.setisGiftsOld = bool
     }
     //last
     setLastName(str) {

@@ -9,7 +9,7 @@ import NoFond from "../hauntcomponents/NotFound/NotFound";
 import Options from "../hauntcomponents/Options/Options";
 import Registrate from "../hauntcomponents/Registrate/Registrate";
 import StartPage from "../hauntcomponents/StartPage/StartPage";
-import TopTeams from "../hauntcomponents/TopTeams/TopTeams";
+import ProfileGifts from "../hauntcomponents/TopTeams/ProfileGifts";
 import {Context} from "../index"
 
 const AppRoutes = observer(() => 
@@ -23,7 +23,7 @@ const AppRoutes = observer(() =>
             <Route path="/me" element={<MyProfile />} />
             <Route path="/myTeams" element={<MyTeams />} />
             <Route path="/findPlayer" element={<FindPlayers />} />
-            <Route path="/topTeams" element={<TopTeams />} />
+            <Route path="/me/gifts" element={<ProfileGifts />} />
             <Route path="/options" element={<Options />} />
             <Route path="*" element={<StartPage />} />
         </Routes>

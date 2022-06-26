@@ -148,13 +148,16 @@
 } */
 
 @media only screen and (min-width: 300px) and (max-width: 599px){
-    .row-rev{
+    /* .row-rev{
         display: flex !important; 
         flex-direction: column-reverse;
-    }
+    } */
     .or-1-mb{
         margin-bottom: 1rem;
         text-align: center;
+    }
+    .hide-on-s{
+        display: none;
     }
 }
 
@@ -162,4 +165,10 @@
     margin-block-start: .1rem;
     margin-block-end: .1rem;
     font-weight: 500;
+}
+
+@media only screen and (min-width: 600px){
+    .show-more-s{
+        display: none;
+    }
 }
