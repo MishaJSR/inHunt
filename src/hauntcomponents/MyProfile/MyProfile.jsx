@@ -24,19 +24,14 @@ const MyProfile = observer(() => {
   // if ((screenWidth <= 670) && (screenWidth >= 600)) frMass = frMass.slice(0,4);
   // if (screenWidth < 600) frMass = frMass.slice(0,3);
 
-  // window.addEventListener(`resize`, event => {
-  //   if ((window.screen.width <= 670) && (window.screen.width >= 600)) frMass = frMass.slice(0,4);
-  //   if (window.screen.width < 600) setfrMass(frMass.slice(0,3));
-  //   console.log(window.screen.width)
-  // }, false);
 
 
   return <div class="bg-grey">
 
     <div class="container bg-white pt-1r">
-      <div class="row row-bot">
+      <div class="row row-rev row-bot">
 
-        <div class="col xl4 l6 m6 s6 center-align">
+        <div class="col xl4 l6 m6 s12 center-align">
           <div class="ava-img">
             <a class="no-pad" href="/me">
               <div class="wrapper-img-ava">
@@ -54,22 +49,19 @@ const MyProfile = observer(() => {
 
         </div>
 
-        <div className="col xl8 l6 m6 s6 or-1-mb left-align ">
+        <div className="col xl8 l6 m6 s12 or-1-mb center-align ">
           <div>
             <h3 class="h-0">{user.getProfile().lastName} {user.getProfile().lastSurname}</h3>
           </div>
           <div>
-            <h5>{user.getProfile().lastStatus}</h5>
+            <h6>{user.getProfile().lastStatus}</h6>
           </div>
           <div>{user.getProfile().lastAbout}</div>
         </div>
       </div>
-    </div>
 
-    <div class="container bg-white">
       <div class="row ">
-
-        <div class="col xl4 l6 m6 s12 center-align hide-on-s">
+        <div class="col xl4 l6 m6 s6 center-align hide-on-s">
           <div class="ava-img">
             <div class="coment-block">
               <div className="container-top center-align">
@@ -116,8 +108,13 @@ const MyProfile = observer(() => {
             </div>
           </div>
         </div>
+
+        <div class="col xl4 l6 m6 s12">
+        dfdf
+        </div>
       </div>
     </div>
+
 
   </div>
 }

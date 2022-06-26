@@ -148,10 +148,10 @@
 } */
 
 @media only screen and (min-width: 300px) and (max-width: 599px){
-    /* .row-rev{
+    .row-rev{
         display: flex !important; 
         flex-direction: column-reverse;
-    } */
+    }
     .or-1-mb{
         margin-bottom: 1rem;
     }
