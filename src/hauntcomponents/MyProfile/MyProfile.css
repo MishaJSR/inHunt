@@ -23,6 +23,7 @@
 .mr-1r {
     margin-right: 1rem;
 }
+
 .img-center-circle {
     width: 100%;
     height: auto;
@@ -42,8 +43,8 @@
 }
 
 .wrapper-img-ava{
-    width: 300px;
-    height: 300px;
+    width: 100%;
+    height: auto;
 }
 
 .my-butt{
@@ -59,6 +60,11 @@
 }
 
 .wrapper-img-but{
+    width: 100%;
+    height: auto;
+}
+
+.wrapper-status-w300{
     width: 300px;
     height: auto;
 }
@@ -66,7 +72,7 @@
 .coment-block{
     border-radius: 2%;
     border: 2px solid  green;
-    width: 300px;
+    width: 100%;
     height: auto;
 }
 
@@ -148,15 +154,19 @@
 } */
 
 @media only screen and (min-width: 300px) and (max-width: 599px){
-    .row-rev{
+    /* .row-rev{
         display: flex !important; 
         flex-direction: column-reverse;
-    }
+    } */
     .or-1-mb{
         margin-bottom: 1rem;
     }
     .hide-on-s{
         display: none;
+    }
+
+    .wrapper-status-w300{
+        text-align: center !important;
     }
 }
 
@@ -174,4 +184,53 @@
 
 .h-0{
     margin: 0 0 !important;
+}
+
+.collection .collection-item {
+    padding: 0.5rem 0.5rem !important;
+}
+
+ .span-0 {
+    margin-left: 0 !important;
+    padding: 0 0 !important;
+    min-width: 2rem !important;
+}
+
+.span-gitf {
+    margin-left: 0 !important;
+    padding: 0 0 !important;
+}
+
+.imgPost > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.col-row-0{
+    margin-left: 0 !important;
+   margin-right: 0 !important;
+   margin-bottom: 0 !important;
+}
+
+.card-panel{
+    padding: 1rem 1rem !important;
+}
+ 
+.imgPost {
+    width: 60px !important;
+    height: 60px !important;
+    padding: 0 0 !important;
+    object-fit: cover;
+}
+
+@media only screen and (max-width: 420px){
+    .imgPost {
+        width: 45px !important;
+        height: 45px !important;
+    }
+}
+
+.mb-1rem {
+    margin-bottom: 1rem !important;
 }

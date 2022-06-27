@@ -19,19 +19,22 @@ const MyProfile = observer(() => {
 
   const [isGiftsOld, setisGifts] = useState(user.getProfile().isGiftsOld);
 
-  
+  const screenWidth = window.screen.width;
 
-  // if ((screenWidth <= 670) && (screenWidth >= 600)) frMass = frMass.slice(0,4);
-  // if (screenWidth < 600) frMass = frMass.slice(0,3);
+  useEffect (() => {
+    if (screenWidth <= 1220) setfrMass(frMass.slice(0,4));
+  })
+
+
 
 
 
   return <div class="bg-grey">
 
     <div class="container bg-white pt-1r">
-      <div class="row row-rev row-bot">
+      <div class="row row-bot">
 
-        <div class="col xl4 l6 m6 s12 center-align">
+        <div class="col xl4 l4 m4 s4 center-align">
           <div class="ava-img">
             <a class="no-pad" href="/me">
               <div class="wrapper-img-ava">
@@ -43,25 +46,23 @@ const MyProfile = observer(() => {
           <div class="ava-img">
             <div class="wrapper-img-but">
               <a onClick={() => user.setNewAva("https://st.depositphotos.com/1703013/1328/i/450/depositphotos_13286310-stock-photo-bird-hunting-silhouette.jpg")}
-                class="waves-effect waves-light btn mt-1vh fz-60 green my-butt blck">Сменить фото</a>
+                class="waves-effect waves-light btn mt-1vh fz-60 green my-butt blck">Change photo</a>
             </div>
           </div>
 
         </div>
 
-        <div className="col xl8 l6 m6 s12 or-1-mb center-align ">
-          <div>
+        <div className="col xl8 l8 m8 s8 or-1-mb left-align ">
             <h3 class="h-0">{user.getProfile().lastName} {user.getProfile().lastSurname}</h3>
+            <h6>{user.getProfile().lastStatus}</h6>
+          {/* <h6>{user.getProfile().lastAbout}</h6> */}
           </div>
           <div>
-            <h6>{user.getProfile().lastStatus}</h6>
-          </div>
-          <div>{user.getProfile().lastAbout}</div>
         </div>
       </div>
 
       <div class="row ">
-        <div class="col xl4 l6 m6 s6 center-align hide-on-s">
+        <div class="col xl4 l4 m4 s4 center-align hide-on-s">
           <div class="ava-img">
             <div class="coment-block">
               <div className="container-top center-align">
@@ -74,7 +75,7 @@ const MyProfile = observer(() => {
                 {frMass.map((el) =>
                   <div>
                     <div >
-                      <div class="col pad-0 xl4 l4 m4 xm s4  ">
+                      <div class="col pad-0 xl4 l6 m6 xm s4  ">
                         <div className="ava-img">
                           <a class="no-pad a-img" href={"/profiles/" + el.id}>
                             <div className="wrapper-img-friends">
@@ -101,16 +102,34 @@ const MyProfile = observer(() => {
 
         </div>
         <div class="show-more-s">
-          <div class="col s12">
+          <div class="col s4">
             <div class="collection ">
-              <a href="/me/friends" class="collection-item green-text"><span class="badge black-text">{frMass.length}</span>Friends</a>
-              <a onClick={() => user.setisGiftsOld(true)} href="/me/gifts" class="collection-item green-text"><span class={isGiftsOld ? "badge": "new badge"}>{gifts.length}</span>Gifts</a>
+              <a href="/me/friends" class="collection-item green-text"><span class="span-0 badge black-text ">{frMass.length}</span>Friends</a>
+              <a onClick={() => user.setisGiftsOld(true)} href="/me/gifts" class="collection-item green-text"><span class={isGiftsOld ? "badge span-gitf": "new badge span-gitf"}>{gifts.length}</span>Gifts</a>
             </div>
           </div>
         </div>
 
-        <div class="col xl4 l6 m6 s12">
-        dfdf
+        <div class="col xl8 l8 m8 s8">
+        <div class="card-panel grey lighten-5 z-depth-1">
+          <div class="row col-row-0">
+            <div className="row mb-1rem col-row-0 ">
+            <div class="col s2 imgPost">
+              <img src={user.getUser().avaImg} alt="" class="circle responsive-img"/> 
+              </div>
+              <div className="col s8">
+              <h6 class="green-text">
+                Nane
+              </h6>
+              </div>
+              </div>
+            <div class="col s12">
+              <span class="black-text">
+                This is a square image. Add the "circle" class to it to make it appear circular.
+              </span>
+            </div>
+        </div>
+      </div>
         </div>
       </div>
     </div>
