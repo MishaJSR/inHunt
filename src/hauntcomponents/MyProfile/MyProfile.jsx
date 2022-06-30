@@ -13,17 +13,17 @@ const MyProfile = observer(() => {
 
   const { user } = useContext(Context);
 
-  const [frMass, setfrMass] = useState(user.getProfile().friends);
+  const [friends, setFriends] = useState(user.getProfile().friends.slice(0,4));
 
   const [gifts, setgifts] = useState(user.getProfile().gifts);
 
   const [isGiftsOld, setisGifts] = useState(user.getProfile().isGiftsOld);
 
-  const screenWidth = window.screen.width;
 
-  useEffect (() => {
-    if (screenWidth <= 1220) setfrMass(frMass.slice(0,4));
-  })
+  // useEffect (() => {
+  //   user.getProfile().friends.slice(0,4))
+  // }, [])
+
 
 
 
@@ -34,7 +34,7 @@ const MyProfile = observer(() => {
     <div class="container bg-white pt-1r">
       <div class="row row-bot">
 
-        <div class="col xl4 l4 m4 s4 center-align">
+        <div class="col xl2 l4 m4 s4 center-align">
           <div class="ava-img">
             <a class="no-pad" href="/me">
               <div class="wrapper-img-ava">
@@ -62,7 +62,7 @@ const MyProfile = observer(() => {
       </div>
 
       <div class="row ">
-        <div class="col xl4 l4 m4 s4 center-align hide-on-s">
+        <div class="col xl2 l4 m4 s4 center-align hide-on-s">
           <div class="ava-img">
             <div class="coment-block">
               <div className="container-top center-align">
@@ -72,10 +72,10 @@ const MyProfile = observer(() => {
               </div>
               <div class="row mar-0">
                 { }
-                {frMass.map((el) =>
+                {friends.map((el) =>
                   <div>
                     <div >
-                      <div class="col pad-0 xl4 l6 m6 xm s4  ">
+                      <div class="col pad-0 xl6 l6 m6 xm s4  ">
                         <div className="ava-img">
                           <a class="no-pad a-img" href={"/profiles/" + el.id}>
                             <div className="wrapper-img-friends">
@@ -102,9 +102,9 @@ const MyProfile = observer(() => {
 
         </div>
         <div class="show-more-s">
-          <div class="col s4">
+          <div class="col xl2 l4 m4 s4">
             <div class="collection ">
-              <a href="/me/friends" class="collection-item green-text"><span class="span-0 badge black-text ">{frMass.length}</span>Friends</a>
+              <a href="/me/friends" class="collection-item green-text"><span class="span-0 badge black-text ">{friends.length}</span>Friends</a>
               <a onClick={() => user.setisGiftsOld(true)} href="/me/gifts" class="collection-item green-text"><span class={isGiftsOld ? "badge span-gitf": "new badge span-gitf"}>{gifts.length}</span>Gifts</a>
             </div>
           </div>
