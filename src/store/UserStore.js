@@ -70,6 +70,20 @@ export default class UserStore {
                     surname: "Kozlov",
                     ava:"https://img2.voenpro.ru/images/den-ohotnika-16.jpg"
                 }
+            ],
+            posts: [
+                {
+                    id_user: 22, 
+                    id_post: 1, 
+                    likes: 23,
+                    text: "Hi. This is my first post!!!"
+                },
+                {
+                    id_user: 4, 
+                    id_post: 2, 
+                    likes: 15,
+                    text: "Hi, Mu dear Huntes)))"
+                }
             ]
         }
         makeAutoObservable(this)

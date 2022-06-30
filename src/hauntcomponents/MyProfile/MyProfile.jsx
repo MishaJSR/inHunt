@@ -6,6 +6,7 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { observer } from 'mobx-react-lite';
 import './MyProfile.css';
 import 'materialize-css'
+import coment from '../../icons/coment.png'
 
 const MyProfile = observer(() => {
 
@@ -30,6 +31,7 @@ const MyProfile = observer(() => {
 
 
   return <div class="bg-grey">
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 
     <div class="container bg-white pt-1r">
       <div class="row row-bot">
@@ -110,7 +112,9 @@ const MyProfile = observer(() => {
           </div>
         </div>
 
-        <div class="col xl8 l8 m8 s8">
+        
+      
+        <div class="col xl9 l8 m8 s8">
         <div class="card-panel grey lighten-5 z-depth-1">
           <div class="row col-row-0">
             <div className="row mb-1rem col-row-0 ">
@@ -123,10 +127,16 @@ const MyProfile = observer(() => {
               </h6>
               </div>
               </div>
-            <div class="col s12">
+            <div class="col s12 justify-text no-pad">
               <span class="black-text">
                 This is a square image. Add the "circle" class to it to make it appear circular.
               </span>
+            </div>
+            <div class="col mt-1r s12 m4 l3 xl2 left no-pad">
+            <span>10 </span><i class="material-icons tiny">star</i><span class="mr-1r"> Stars</span>
+            </div>
+            <div class="col mt-1r s12 m5 l3 xl3 left no-pad">
+            <span>14 </span><i class="material-icons tiny">sms</i><span> Comments</span>
             </div>
         </div>
       </div>

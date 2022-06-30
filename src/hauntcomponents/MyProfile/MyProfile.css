@@ -23,6 +23,17 @@
 .mr-1r {
     margin-right: 1rem;
 }
+.mt-05r{
+    margin-top: .5rem;
+}
+.mt-1r{
+    margin-top: 1rem;
+}
+
+.justify-text{
+    text-align: justify !important;
+}
+
 
 .img-center-circle {
     width: 100%;
