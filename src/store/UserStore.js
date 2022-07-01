@@ -77,17 +77,17 @@ export default class UserStore {
                     ],
                     posts: [
                         {
-                            id_user: 22,
+                            id_adder: 22,
                             id_post: 1,
                             likes: 23,
                             comments: 12,
                             text: "Hi. This is my first post!!!"
                         },
                         {
-                            id_user: 4,
+                            id_adder: 2,
                             id_post: 2,
                             likes: 15,
-                            comments: 12,
+                            comments: 17,
                             text: "Hi, Mu dear Huntes)))"
                         }
                     ]
@@ -163,14 +163,14 @@ export default class UserStore {
                     ],
                     posts: [
                         {
-                            id_user: 22,
+                            id_adder: 22,
                             id_post: 1,
                             likes: 23,
                             comments: 12,
                             text: "Hi. This is my first post!!!"
                         },
                         {
-                            id_user: 4,
+                            id_adder: 2,
                             id_post: 2,
                             likes: 15,
                             comments: 12,
@@ -249,14 +249,14 @@ export default class UserStore {
                     ],
                     posts: [
                         {
-                            id_user: 22,
+                            id_adder: 22,
                             id_post: 1,
                             likes: 23,
                             comments: 12,
                             text: "Hi. This is my first post!!!"
                         },
                         {
-                            id_user: 4,
+                            id_adder: 4,
                             id_post: 2,
                             likes: 15,
                             comments: 12,
@@ -371,14 +371,22 @@ export default class UserStore {
     getUser() {
         return this._user
     }
-    getProfile() {
+    getProfile(numId = this._user.active_id) {
         for (let i = 0; i < this._user.users.length; i++){
-            if (this._user.users[i].id_user === this._user.active_id) {
+            if (this._user.users[i].id_user === numId) {
                 return this._user.users[i]
             }
         }
 
         // return this._user.users[0]
+    }
+
+    getProfileInfo(id){
+        for (let i = 0; i < this._user.users.length; i++){
+            if (this._user.users[i].id_user === id) {
+                return this._user.users[i]
+            }
+        }
     }
 
 

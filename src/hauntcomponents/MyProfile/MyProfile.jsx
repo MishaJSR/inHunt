@@ -16,15 +16,17 @@ const MyProfile = observer(() => {
 
   const [friends, setFriends] = useState(user.getProfile().profile.friends.slice(0, 4));
 
+  const [posts, setPosts] = useState(user.getProfile().profile.posts);
+
   const [gifts, setgifts] = useState(user.getProfile().profile.gifts);
 
   const [isGiftsOld, setisGifts] = useState(user.getProfile().profile.isGiftsOld);
 
   const [isLikeClicked, setisLikeClicked] = useState(false)
 
-  // useEffect (() => {
-  //   user.getProfile().friends.slice(0,4))
-  // }, [])
+  useEffect (() => {
+    console.log(posts);
+  }, [])
 
 
 
@@ -74,7 +76,6 @@ const MyProfile = observer(() => {
                 </div>
               </div>
               <div class="row mar-0">
-                { }
                 {friends.map((el) =>
                   <div>
                     <div >
@@ -117,78 +118,38 @@ const MyProfile = observer(() => {
 
         <div class="col xl9 l8 m8 s8">
           
-          
-        {/* {user.getProfile(22).posts.map((el) => {
-<div>sds</div>
-        })} */}
+        {posts.map((el) =>
           <div class="card-panel grey lighten-5 z-depth-1">
-            <div class="row col-row-0">
-              <div className="row mb-1rem col-row-0 ">
-                <div class="col s2 imgPost">
-                  <img src={user.getProfile().avaImg} alt="" class="circle responsive-img" />
-                </div>
-                <div className="col s8">
-                  <h6 class="black-text">
-                    Nane
-                  </h6>
-                </div>
+          <div class="row col-row-0">
+            <div className="row mb-1rem col-row-0 ">
+              <div class="col s2 imgPost">
+                <img src={user.getProfile().avaImg} alt="" class="circle responsive-img" />
               </div>
-              <div class="col s12 justify-text no-pad">
-                <span class="black-text">
-                  This is a square image. Add the "circle" class to it to make it appear circular.
-                </span>
-              </div>
-              <div class="col mt-1r s12 m4 l3 xl2 left no-pad">
-                <span>10 </span>
-                <a onClick={() => {
-                  setisLikeClicked(!isLikeClicked);
-
-                }
-                }  class="hover-w no-pad" href="me">
-                <i class="material-icons tiny">star</i>
-                <span class="mr-1r"> Nice</span>
-                </a>
-              </div>
-              <div class="col mt-1r s12 m5 l3 xl3 left no-pad">
-                <span>14 </span><i class="material-icons tiny">sms</i><span> Comments</span>
+              <div className="col s8">
+                <h6 class="black-text">
+                {user.getProfileInfo(el.id_adder).profile.lastName}
+                </h6>
               </div>
             </div>
-          </div>
-
-
-          <div class="card-panel grey lighten-5 z-depth-1">
-            <div class="row col-row-0">
-              <div className="row mb-1rem col-row-0 ">
-                <div class="col s2 imgPost">
-                  <img src={user.getProfile().avaImg} alt="" class="circle responsive-img" />
-                </div>
-                <div className="col s8">
-                  <h6 class="black-text">
-                    Nane
-                  </h6>
-                </div>
-              </div>
-              <div class="col s12 justify-text no-pad">
-                <span class="black-text">
-                  This is a square image. Add the "circle" class to it to make it appear circular.
-                </span>
-              </div>
-              <div class="col mt-1r s12 m4 l3 xl2 left no-pad">
-                <span>10 </span>
-                <a onClick={() => {
-                  setisLikeClicked(!isLikeClicked);
-
-                }
-                }  class="hover-w no-pad" href="me">
-                <i class="material-icons tiny">star</i>
-                <span class="mr-1r"> Nice</span>
-                </a>
-              </div>
-              <div class="col mt-1r s12 m5 l3 xl3 left no-pad">
-                <span>14 </span><i class="material-icons tiny">sms</i><span> Comments</span>
-              </div>
+            <div class="col s12 justify-text no-pad">
+              <span class="black-text">
+                  {el.text}
+              </span>
+            </div>
+            <div class="col mt-1r s12 m4 l3 xl2 left no-pad">
+              <span>{el.likes} </span>
+              <a class="hover-w no-pad" href="me">
+              <i class="material-icons tiny">star</i>
+              <span class="mr-1r"> Nice</span>
+              </a>
+            </div>
+            <div class="col mt-1r s12 m5 l3 xl3 left no-pad">
+              <span>{el.comments} </span><i class="material-icons tiny">sms</i><span> Comments</span>
             </div>
           </div>
+        </div>
+                )}
+
 
         </div>
 
@@ -203,3 +164,4 @@ const MyProfile = observer(() => {
 
 
 export default MyProfile
+
