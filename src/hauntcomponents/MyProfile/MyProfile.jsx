@@ -138,13 +138,17 @@ const MyProfile = observer(() => {
             </div>
             <div class="col mt-1r s12 m4 l3 xl2 left no-pad">
               <span>{el.likes} </span>
-              <a class="hover-w no-pad" href="me">
+              <Link onClick={() => user.addLike(el.id_post)} class="hover-w no-pad" to="/me">
               <i class="material-icons tiny">star</i>
               <span class="mr-1r"> Nice</span>
-              </a>
+              </Link>
             </div>
             <div class="col mt-1r s12 m5 l3 xl3 left no-pad">
-              <span>{el.comments} </span><i class="material-icons tiny">sms</i><span> Comments</span>
+              <span>{el.comments} </span>
+              <a class="hover-w no-pad" href="me">
+              <i class="material-icons tiny">sms</i>
+              <span> Comments</span>
+              </a>
             </div>
           </div>
         </div>

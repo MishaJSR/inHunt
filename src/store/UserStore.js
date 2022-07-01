@@ -4,8 +4,9 @@ export default class UserStore {
     constructor() {
         this._isAuth = true
         this._user = {
-            active_id: null,
+            active_id: 22,
             session: "dsdsfwscw2v24292os",
+            active_page_userID: 22,
             users: [
                 {
                 id_user: 22,
@@ -92,7 +93,7 @@ export default class UserStore {
                         },
                         {
                             id_adder: 4,
-                            id_post: 2,
+                            id_post: 3,
                             likes: 2,
                             comments: 1,
                             text: "Wow? Its work!!!"
@@ -472,9 +473,9 @@ export default class UserStore {
         if (this._user.email == this._user.profile.lastEmail) return false; else return true
     }
 
-    addLike(str) {
-        this._user.profile.lastEmail = str
-    }
+    // addLike(str) {
+    //     this._user.profile.lastEmail = str
+    // }
 
 
 
@@ -505,6 +506,8 @@ export default class UserStore {
     get getTrain() {
         return this._train
     }
+
+
     getUser() {
         return this._user
     }
@@ -524,6 +527,16 @@ export default class UserStore {
                 return this._user.users[i]
             }
         }
+    }
+
+    addLike(idPost){
+        this._user.users.map(el => {
+            if (el.id_user === this._user.active_page_userID) {
+                el.profile.posts.map(e => {
+                    if (e.id_post === idPost) e.likes++
+                })
+            }
+        }) 
     }
 
 
