@@ -62,7 +62,10 @@ const App = observer(() => {
                 <li><Link to="login">Login</Link></li>
                 <li><Link to="registration">Registration</Link></li>
               </ul>
-              <Link class="right pd-2r" to="/me" onClick={() => user.setIsAuth(true)}>log</Link>
+              <Link class="right pd-2r" to="/me" onClick={() => {
+user.setIsAuth(true);
+user.setActiveId(22)//user ID
+              }}>log</Link>
             </div>
           </nav>
               </>)

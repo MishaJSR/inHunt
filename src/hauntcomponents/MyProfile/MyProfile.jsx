@@ -14,11 +14,11 @@ const MyProfile = observer(() => {
 
   const { user } = useContext(Context);
 
-  const [friends, setFriends] = useState(user.getProfile().friends.slice(0, 4));
+  const [friends, setFriends] = useState(user.getProfile().profile.friends.slice(0, 4));
 
-  const [gifts, setgifts] = useState(user.getProfile().gifts);
+  const [gifts, setgifts] = useState(user.getProfile().profile.gifts);
 
-  const [isGiftsOld, setisGifts] = useState(user.getProfile().isGiftsOld);
+  const [isGiftsOld, setisGifts] = useState(user.getProfile().profile.isGiftsOld);
 
   const [isLikeClicked, setisLikeClicked] = useState(false)
 
@@ -41,7 +41,7 @@ const MyProfile = observer(() => {
           <div class="ava-img">
             <a class="no-pad" href="/me">
               <div class="wrapper-img-ava">
-                <img src={user.getUser().avaImg} class="img-center-circle" alt="" />
+                <img src={user.getProfile().avaImg} class="img-center-circle" alt="" />
               </div>
             </a>
 
@@ -56,8 +56,8 @@ const MyProfile = observer(() => {
         </div>
 
         <div className="col xl8 l8 m8 s8 or-1-mb left-align ">
-          <h3 class="h-0">{user.getProfile().lastName} {user.getProfile().lastSurname}</h3>
-          <h6>{user.getProfile().lastStatus}</h6>
+          <h3 class="h-0">{user.getProfile().profile.lastName} {user.getProfile().profile.lastSurname}</h3>
+          <h6>{user.getProfile().profile.lastStatus}</h6>
           {/* <h6>{user.getProfile().lastAbout}</h6> */}
         </div>
         <div>
@@ -117,11 +117,15 @@ const MyProfile = observer(() => {
 
         <div class="col xl9 l8 m8 s8">
           
+          
+        {/* {user.getProfile(22).posts.map((el) => {
+<div>sds</div>
+        })} */}
           <div class="card-panel grey lighten-5 z-depth-1">
             <div class="row col-row-0">
               <div className="row mb-1rem col-row-0 ">
                 <div class="col s2 imgPost">
-                  <img src={user.getUser().avaImg} alt="" class="circle responsive-img" />
+                  <img src={user.getProfile().avaImg} alt="" class="circle responsive-img" />
                 </div>
                 <div className="col s8">
                   <h6 class="black-text">
@@ -156,7 +160,7 @@ const MyProfile = observer(() => {
             <div class="row col-row-0">
               <div className="row mb-1rem col-row-0 ">
                 <div class="col s2 imgPost">
-                  <img src={user.getUser().avaImg} alt="" class="circle responsive-img" />
+                  <img src={user.getProfile().avaImg} alt="" class="circle responsive-img" />
                 </div>
                 <div className="col s8">
                   <h6 class="black-text">
