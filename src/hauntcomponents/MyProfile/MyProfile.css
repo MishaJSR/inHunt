@@ -35,6 +35,22 @@
 }
 
 
+
+.hover-w{
+    color: black ;
+}
+a:hover{
+    background-color: #fafafa !important;
+    color: #1B5E20;
+}
+
+.click-like{
+    color: #1B5E20 !important; 
+}
+
+
+
+
 .img-center-circle {
     width: 100%;
     height: auto;

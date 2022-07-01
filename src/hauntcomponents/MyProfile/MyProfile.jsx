@@ -14,12 +14,13 @@ const MyProfile = observer(() => {
 
   const { user } = useContext(Context);
 
-  const [friends, setFriends] = useState(user.getProfile().friends.slice(0,4));
+  const [friends, setFriends] = useState(user.getProfile().friends.slice(0, 4));
 
   const [gifts, setgifts] = useState(user.getProfile().gifts);
 
   const [isGiftsOld, setisGifts] = useState(user.getProfile().isGiftsOld);
 
+  const [isLikeClicked, setisLikeClicked] = useState(false)
 
   // useEffect (() => {
   //   user.getProfile().friends.slice(0,4))
@@ -31,7 +32,7 @@ const MyProfile = observer(() => {
 
 
   return <div class="bg-grey">
-            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
     <div class="container bg-white pt-1r">
       <div class="row row-bot">
@@ -55,11 +56,11 @@ const MyProfile = observer(() => {
         </div>
 
         <div className="col xl8 l8 m8 s8 or-1-mb left-align ">
-            <h3 class="h-0">{user.getProfile().lastName} {user.getProfile().lastSurname}</h3>
-            <h6>{user.getProfile().lastStatus}</h6>
+          <h3 class="h-0">{user.getProfile().lastName} {user.getProfile().lastSurname}</h3>
+          <h6>{user.getProfile().lastStatus}</h6>
           {/* <h6>{user.getProfile().lastAbout}</h6> */}
-          </div>
-          <div>
+        </div>
+        <div>
         </div>
       </div>
 
@@ -107,40 +108,87 @@ const MyProfile = observer(() => {
           <div class="col xl2 l4 m4 s4">
             <div class="collection ">
               <a href="/me/friends" class="collection-item green-text"><span class="span-0 badge black-text ">{friends.length}</span>Friends</a>
-              <a onClick={() => user.setisGiftsOld(true)} href="/me/gifts" class="collection-item green-text"><span class={isGiftsOld ? "badge span-gitf": "new badge span-gitf"}>{gifts.length}</span>Gifts</a>
+              <a onClick={() => user.setisGiftsOld(true)} href="/me/gifts" class="collection-item green-text"><span class={isGiftsOld ? "badge span-gitf" : "new badge span-gitf"}>{gifts.length}</span>Gifts</a>
             </div>
           </div>
         </div>
 
-        
-      
+
+
         <div class="col xl9 l8 m8 s8">
-        <div class="card-panel grey lighten-5 z-depth-1">
-          <div class="row col-row-0">
-            <div className="row mb-1rem col-row-0 ">
-            <div class="col s2 imgPost">
-              <img src={user.getUser().avaImg} alt="" class="circle responsive-img"/> 
+          
+          <div class="card-panel grey lighten-5 z-depth-1">
+            <div class="row col-row-0">
+              <div className="row mb-1rem col-row-0 ">
+                <div class="col s2 imgPost">
+                  <img src={user.getUser().avaImg} alt="" class="circle responsive-img" />
+                </div>
+                <div className="col s8">
+                  <h6 class="black-text">
+                    Nane
+                  </h6>
+                </div>
               </div>
-              <div className="col s8">
-              <h6 class="green-text">
-                Nane
-              </h6>
+              <div class="col s12 justify-text no-pad">
+                <span class="black-text">
+                  This is a square image. Add the "circle" class to it to make it appear circular.
+                </span>
               </div>
+              <div class="col mt-1r s12 m4 l3 xl2 left no-pad">
+                <span>10 </span>
+                <a onClick={() => {
+                  setisLikeClicked(!isLikeClicked);
+
+                }
+                }  class="hover-w no-pad" href="me">
+                <i class="material-icons tiny">star</i>
+                <span class="mr-1r"> Nice</span>
+                </a>
               </div>
-            <div class="col s12 justify-text no-pad">
-              <span class="black-text">
-                This is a square image. Add the "circle" class to it to make it appear circular.
-              </span>
+              <div class="col mt-1r s12 m5 l3 xl3 left no-pad">
+                <span>14 </span><i class="material-icons tiny">sms</i><span> Comments</span>
+              </div>
             </div>
-            <div class="col mt-1r s12 m4 l3 xl2 left no-pad">
-            <span>10 </span><i class="material-icons tiny">star</i><span class="mr-1r"> Stars</span>
+          </div>
+
+
+          <div class="card-panel grey lighten-5 z-depth-1">
+            <div class="row col-row-0">
+              <div className="row mb-1rem col-row-0 ">
+                <div class="col s2 imgPost">
+                  <img src={user.getUser().avaImg} alt="" class="circle responsive-img" />
+                </div>
+                <div className="col s8">
+                  <h6 class="black-text">
+                    Nane
+                  </h6>
+                </div>
+              </div>
+              <div class="col s12 justify-text no-pad">
+                <span class="black-text">
+                  This is a square image. Add the "circle" class to it to make it appear circular.
+                </span>
+              </div>
+              <div class="col mt-1r s12 m4 l3 xl2 left no-pad">
+                <span>10 </span>
+                <a onClick={() => {
+                  setisLikeClicked(!isLikeClicked);
+
+                }
+                }  class="hover-w no-pad" href="me">
+                <i class="material-icons tiny">star</i>
+                <span class="mr-1r"> Nice</span>
+                </a>
+              </div>
+              <div class="col mt-1r s12 m5 l3 xl3 left no-pad">
+                <span>14 </span><i class="material-icons tiny">sms</i><span> Comments</span>
+              </div>
             </div>
-            <div class="col mt-1r s12 m5 l3 xl3 left no-pad">
-            <span>14 </span><i class="material-icons tiny">sms</i><span> Comments</span>
-            </div>
+          </div>
+
         </div>
-      </div>
-        </div>
+
+
       </div>
     </div>
 
