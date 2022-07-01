@@ -123,7 +123,7 @@ const MyProfile = observer(() => {
           <div class="row col-row-0">
             <div className="row mb-1rem col-row-0 ">
               <div class="col s2 imgPost">
-                <img src={user.getProfile().avaImg} alt="" class="circle responsive-img" />
+                <img src={user.getProfileInfo(el.id_adder).avaImg} alt="" class="circle responsive-img" />
               </div>
               <div className="col s8">
                 <h6 class="black-text">
