@@ -8,12 +8,14 @@ import axios from "axios";
 // )
 
 
-export const getAllUser = () => {
-    return axios.get(`http://83.220.174.93:2048/Players`)
-    .then(
-        response => {
-           return response.data
+export function getAllUser () {
+    fetch("http://localhost:5000/posts")
+      .then(res => res.json())
+      .then(
+        (result) => {
+          return result
         }
-    )
+      )
+
         
 }

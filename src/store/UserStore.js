@@ -9,7 +9,7 @@ export default class UserStore {
             active_page_userID: 22,
             users: [
                 {
-                id_user: 22,
+                id_user: "62c98d3952c7810524f0f5ba",
                 Myuser: null,
                 train: "dsd",
                 name: "Andrey",
@@ -102,7 +102,7 @@ export default class UserStore {
                 }
             },
             {
-                id_user: 1,
+                id_user: "62c4848f410419475cad4b2b",
                 Myuser: null,
                 train: "dsd",
                 name: "Oleg",

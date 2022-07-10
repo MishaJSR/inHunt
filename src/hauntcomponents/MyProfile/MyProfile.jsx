@@ -14,19 +14,30 @@ const MyProfile = observer(() => {
 
   const { user } = useContext(Context);
 
-  const [friends, setFriends] = useState(user.getProfile().profile.friends.slice(0, 4));
+  const [friends, setFriends] = useState(user.getProfile("62c98d3952c7810524f0f5ba").profile.friends.slice(0, 4));
 
-  const [posts, setPosts] = useState(user.getProfile().profile.posts);
+  const [posts, setPosts] = useState([]);
 
-  const [gifts, setgifts] = useState(user.getProfile().profile.gifts);
+  const [gifts, setgifts] = useState(user.getProfile("62c98d3952c7810524f0f5ba").profile.gifts);
 
-  const [isGiftsOld, setisGifts] = useState(user.getProfile().profile.isGiftsOld);
+  const [isGiftsOld, setisGifts] = useState(user.getProfile("62c98d3952c7810524f0f5ba").profile.isGiftsOld);
 
   const [isLikeClicked, setisLikeClicked] = useState(false)
 
-  useEffect (() => {
-    console.log(posts);
+  useEffect(() => {
+    fetch("http://localhost:5000/posts")
+    .then(res => res.json())
+    .then(
+      (result) => {
+        setPosts(result);
+      },
+      // Примечание: важно обрабатывать ошибки именно здесь, а не в блоке catch(),
+      // чтобы не перехватывать исключения из ошибок в самих компонентах.
+      (error) => {
+      }
+    )
   }, [])
+
 
 
 
@@ -43,7 +54,7 @@ const MyProfile = observer(() => {
           <div class="ava-img">
             <a class="no-pad" href="/me">
               <div class="wrapper-img-ava">
-                <img src={user.getProfile().avaImg} class="img-center-circle" alt="" />
+                <img src={user.getProfile("62c98d3952c7810524f0f5ba").avaImg} class="img-center-circle" alt="" />
               </div>
             </a>
 
@@ -58,8 +69,8 @@ const MyProfile = observer(() => {
         </div>
 
         <div className="col xl8 l8 m8 s8 or-1-mb left-align ">
-          <h3 class="h-0">{user.getProfile().profile.lastName} {user.getProfile().profile.lastSurname}</h3>
-          <h6>{user.getProfile().profile.lastStatus}</h6>
+          <h3 class="h-0">{user.getProfile("62c98d3952c7810524f0f5ba").profile.lastName} {user.getProfile("62c98d3952c7810524f0f5ba").profile.lastSurname}</h3>
+          <h6>{user.getProfile("62c98d3952c7810524f0f5ba").profile.lastStatus}</h6>
           {/* <h6>{user.getProfile().lastAbout}</h6> */}
         </div>
         <div>
@@ -123,11 +134,11 @@ const MyProfile = observer(() => {
           <div class="row col-row-0">
             <div className="row mb-1rem col-row-0 ">
               <div class="col s2 imgPost">
-                <img src={user.getProfileInfo(el.id_adder).avaImg} alt="" class="circle responsive-img" />
+                <img src={user.getProfileInfo("62c98d3952c7810524f0f5ba").avaImg} alt="" class="circle responsive-img" />
               </div>
               <div className="col s8">
                 <h6 class="black-text">
-                {user.getProfileInfo(el.id_adder).profile.lastName}
+                {user.getProfileInfo("62c98d3952c7810524f0f5ba").profile.lastName}
                 </h6>
               </div>
             </div>
@@ -137,14 +148,14 @@ const MyProfile = observer(() => {
               </span>
             </div>
             <div class="col mt-1r s12 m4 l3 xl2 left no-pad">
-              <span>{el.likes} </span>
+              <span>{el.likes.length} </span>
               <Link onClick={() => user.addLike(el.id_post)} class="hover-w no-pad" to="/me">
               <i class="material-icons tiny">star</i>
               <span class="mr-1r"> Nice</span>
               </Link>
             </div>
             <div class="col mt-1r s12 m5 l3 xl3 left no-pad">
-              <span>{el.comments} </span>
+              <span>{el.coments.length} </span>
               <a class="hover-w no-pad" href="me">
               <i class="material-icons tiny">sms</i>
               <span> Comments</span>
